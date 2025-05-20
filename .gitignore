@@ -1,0 +1,28 @@
+TOI-zero/TOI0-statements/
+TOI-zero/TOI0-extension/
+.cph
+.vscode
+
+*.exe
+*.txt
+*.pdf
+!posn2567_TA/pretest I/**/*.pdf
+!posn2567_TA/pretest II/**/*.pdf
+
+gen
+testcases
+
+# Ignore all tmp folders and common temporary files
+tmp/
+**/tmp/
+**/tmp/**
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.~
+.DS_Store
+Thumbs.db
+.cache/
+*.log
