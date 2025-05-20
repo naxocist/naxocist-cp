@@ -11,9 +11,9 @@ int32_t main() {
   int k = 10;
   unordered_set<int> us;
   while(k--) {
-  	int x; cin >> x;
-  	if(us.find(x) == us.end()) cout << x << ' ';
-  	us.insert(x);
+    int x; cin >> x;
+    if(us.find(x) == us.end()) cout << x << ' ';
+    us.insert(x);
   }
   return 0;
 }

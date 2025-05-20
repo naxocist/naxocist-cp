@@ -21,15 +21,15 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	string s; cin >> s;
-	bool a,b;a=b=0;
-	for(auto c:s){
-		if(isupper(c))a=1;
-		else b=1;
-	}
-	if(a and b)cout<<"Mix";
-	else if(a)cout<<"All Capital Letter";
-	else cout<<"All Small Letter";
+  string s; cin >> s;
+  bool a,b;a=b=0;
+  for(auto c:s){
+  	if(isupper(c))a=1;
+  	else b=1;
+  }
+  if(a and b)cout<<"Mix";
+  else if(a)cout<<"All Capital Letter";
+  else cout<<"All Small Letter";
 }
 
 int32_t main() {

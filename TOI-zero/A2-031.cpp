@@ -14,24 +14,24 @@ int32_t main() {
   for(int i=0; i<n; ++i) cin >> c, b += c;
 
   int q; cin >> q;
-	while(q--) {
-		int x, y; cin >> x >> y >> c;
-		if(x == 1) a[y] = c;
-		else b[y] = c;
-	}
+  while(q--) {
+  	int x, y; cin >> x >> y >> c;
+  	if(x == 1) a[y] = c;
+  	else b[y] = c;
+  }
 
-	unordered_map<char, char> um = {
-		{'A', 'T'},
-		{'T', 'A'},
-		{'G', 'C'},
-		{'C', 'G'}
-	};
+  unordered_map<char, char> um = {
+  	{'A', 'T'},
+  	{'T', 'A'},
+  	{'G', 'C'},
+  	{'C', 'G'}
+  };
 
-	int res = 0;
-	for(int i=0; i<n; ++i) res += (um[a[i]] != b[i]);
+  int res = 0;
+  for(int i=0; i<n; ++i) res += (um[a[i]] != b[i]);
 
-	for(auto c : a) cout << c << ' '; cout << ln;
-	for(auto c : b) cout << c << ' '; cout << ln;
-	cout << res;
+  for(auto c : a) cout << c << ' '; cout << ln;
+  for(auto c : b) cout << c << ' '; cout << ln;
+  cout << res;
   return 0;
 }

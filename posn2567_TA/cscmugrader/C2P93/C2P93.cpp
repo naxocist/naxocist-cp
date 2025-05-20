@@ -22,22 +22,22 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng); }
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 void runcase() {
-	int n; cin >> n;
-	for(int i=1; i<=n; ++i) {
-		int d = log2(i); d++;
-		for(int j=d-1; j>=0; --j) {
-			if((1<<j)&i) cout << 1;
-			else cout << 0;
-		}
-		cout << ' ';
-	}
-	return ;
+  int n; cin >> n;
+  for(int i=1; i<=n; ++i) {
+  	int d = log2(i); d++;
+  	for(int j=d-1; j>=0; --j) {
+  		if((1<<j)&i) cout << 1;
+  		else cout << 0;
+  	}
+  	cout << ' ';
+  }
+  return ;
 }
 
 int32_t main() {
-	cin.tie(nullptr)->sync_with_stdio(0);
-	int TC = 1;
-	// cin >> TC; 
-	while(TC--) runcase();
-	return 0;
+  cin.tie(nullptr)->sync_with_stdio(0);
+  int TC = 1;
+  // cin >> TC; 
+  while(TC--) runcase();
+  return 0;
 }

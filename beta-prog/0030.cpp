@@ -21,10 +21,10 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	string s;cin>>s;reverse(all(s));
-	int a=0,b=0,n=s.size();
-	for(int i=0,x=s[i]-'0';i<n;++i,x=s[i]-'0',a%=3,b%=11)a+=x,b+=x*(i%2?10:1); 
-	cout<<a<<' '<<b;
+  string s;cin>>s;reverse(all(s));
+  int a=0,b=0,n=s.size();
+  for(int i=0,x=s[i]-'0';i<n;++i,x=s[i]-'0',a%=3,b%=11)a+=x,b+=x*(i%2?10:1); 
+  cout<<a<<' '<<b;
 }
 
 int32_t main() {

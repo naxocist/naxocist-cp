@@ -13,14 +13,14 @@ int32_t main() {
   for(auto &x : h) cin >> x;
 
   int mx = 0;
-	for(int i=0; i<n; ++i) {
-		r[i] = max(0, mx - h[i] + 1);
-		mx = max(mx, h[i]);
-	} 
-	
+  for(int i=0; i<n; ++i) {
+  	r[i] = max(0, mx - h[i] + 1);
+  	mx = max(mx, h[i]);
+  } 
+  
   while(l--) {
-  	int x; cin >> x; x--;
-  	cout << r[x] << ln;
+    int x; cin >> x; x--;
+    cout << r[x] << ln;
   }
 
   return 0;

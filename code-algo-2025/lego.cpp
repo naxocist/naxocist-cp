@@ -29,14 +29,14 @@ ll binpow(ll x, ll y) {
 }
 
 void solve() {
-	int n,m;cin>>n>>m;
+  int n,m;cin>>n>>m;
 
-	ll res=1;
-	for(int i=0;i<min(n,m);++i){
-		res*=1ll*(n-i)*(m-i),res%=mod;
-		res*=binpow(binpow(i+1,2), mod-2); res%=mod;
-		cout<<res<<ln;
-	}
+  ll res=1;
+  for(int i=0;i<min(n,m);++i){
+  	res*=1ll*(n-i)*(m-i),res%=mod;
+  	res*=binpow(binpow(i+1,2), mod-2); res%=mod;
+  	cout<<res<<ln;
+  }
 }
 
 int32_t main() {

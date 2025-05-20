@@ -18,16 +18,16 @@ int32_t main() {
 
   int res = 0;
   for(int i=1; i<=n; ++i) {
-  	int l = a[i-1], r = a[i], x = b[i-1], y = b[i];
-  	if(l > r) swap(l, r);
-  	if(x > y) swap(x, y);
+    int l = a[i-1], r = a[i], x = b[i-1], y = b[i];
+    if(l > r) swap(l, r);
+    if(x > y) swap(x, y);
 
-  	if(l == x and r == y) { res ++; continue ; }
-  	int c = (x < l and l < y) + (x < r and r < y);
-  	if(c != 1) continue ;
+    if(l == x and r == y) { res ++; continue ; }
+    int c = (x < l and l < y) + (x < r and r < y);
+    if(c != 1) continue ;
 
-  	if(x < l and l < y and r != x and r != y) res ++;
-  	if(x < r and r < y and l != x and l != y) res ++;
+    if(x < l and l < y and r != x and r != y) res ++;
+    if(x < r and r < y and l != x and l != y) res ++;
   }
 
   cout << res;

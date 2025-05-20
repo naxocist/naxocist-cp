@@ -22,22 +22,22 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 int a[4][4];
 
 void solve() {
-	vector<string> nm(4); for(auto &x:nm)cin>>x;
-	for(int i=0;i<4;++i)for(int j=0;j<4;++j)cin>>a[i][j];
-	using T=tuple<int,int,int,string>;
-	vector<T> v;
-	for(int i=0;i<4;++i){
-		int s,g,rg;s=g=rg=0;
-		for(int j=0;j<4;++j){
-			if(i==j)continue;
-			if(a[i][j]>a[j][i])s+=3;
-			else if(a[i][j]==a[j][i])s++;
-			g+=a[i][j],rg+=a[j][i];
-		}
-		v.pb(s,g-rg,g,nm[i]);
-	}
-	sort(all(v),greater<T>());
-	for(auto [s,_,__,t]:v) cout<<t<<' '<<s<<'\n';
+  vector<string> nm(4); for(auto &x:nm)cin>>x;
+  for(int i=0;i<4;++i)for(int j=0;j<4;++j)cin>>a[i][j];
+  using T=tuple<int,int,int,string>;
+  vector<T> v;
+  for(int i=0;i<4;++i){
+  	int s,g,rg;s=g=rg=0;
+  	for(int j=0;j<4;++j){
+  		if(i==j)continue;
+  		if(a[i][j]>a[j][i])s+=3;
+  		else if(a[i][j]==a[j][i])s++;
+  		g+=a[i][j],rg+=a[j][i];
+  	}
+  	v.pb(s,g-rg,g,nm[i]);
+  }
+  sort(all(v),greater<T>());
+  for(auto [s,_,__,t]:v) cout<<t<<' '<<s<<'\n';
 }
 
 int32_t main() {

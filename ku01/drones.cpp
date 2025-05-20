@@ -12,7 +12,7 @@ int32_t main() {
   cin >> n;
   priority_queue<int> a, b;
   for(int i=1; i<=200; ++i) {
-  	a.emplace(-i); int k = 9; while(k--) a.emplace(-2*i);
+    a.emplace(-i); int k = 9; while(k--) a.emplace(-2*i);
   }
 
   while(n--) cin >> x, b.emplace(x);

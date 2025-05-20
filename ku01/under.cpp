@@ -11,7 +11,7 @@ int32_t main() {
   int l, n; cin >> l >> n;
   vector<int> v(l + 1);
   while(n--) {
-  	int a, b; cin >> a >> b; v[a] ++, v[b] --;
+    int a, b; cin >> a >> b; v[a] ++, v[b] --;
   }
 
   for(int i=1; i<=l; ++i) v[i] += v[i-1];

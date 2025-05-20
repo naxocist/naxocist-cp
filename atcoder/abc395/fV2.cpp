@@ -25,24 +25,24 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 void solve() {
   int n, x; cin >> n >> x;
-	ll res = 0;
+  ll res = 0;
   vector<int> u(n), d(n); for(int i=0; i<n; ++i) cin >> u[i] >> d[i], res += u[i] + d[i];
 
-	auto f = [&](vector<int> &u) {
-		for(int i=1; i<n; ++i) {
-			if(abs(u[i] - u[i-1]) > x) {
-				if(u[i] > u[i-1]) u[i] = u[i-1] + x;
-				else u[i-1] = u[i] + x;
-			}
-		}
-	};
+  auto f = [&](vector<int> &u) {
+  	for(int i=1; i<n; ++i) {
+  		if(abs(u[i] - u[i-1]) > x) {
+  			if(u[i] > u[i-1]) u[i] = u[i-1] + x;
+  			else u[i-1] = u[i] + x;
+  		}
+  	}
+  };
 
-	f(u); reverse(all(u)); f(u); reverse(all(d));
+  f(u); reverse(all(u)); f(u); reverse(all(d));
 
-	ll h = LLONG_MAX;
-	for(int i=0; i<n; ++i) h = min(h, 1ll*u[i] + d[i]);
+  ll h = LLONG_MAX;
+  for(int i=0; i<n; ++i) h = min(h, 1ll*u[i] + d[i]);
 
-	cout << res - h*n;
+  cout << res - h*n;
 }
 
 int32_t main() {

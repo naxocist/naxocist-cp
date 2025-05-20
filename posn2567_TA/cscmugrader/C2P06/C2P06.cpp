@@ -24,31 +24,31 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng); }
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 void runcase() {
-	int n, m; cin >> n >> m;
-	priority_queue<int> pq, pq2;
-	for(int i=0; i<n; ++i) {
-		int x; cin >> x; pq.emplace(x);
-	}
-	
-	for(int i=0; i<m; ++i) {
-		int x; cin >> x; pq2.emplace(x);
-	}
+  int n, m; cin >> n >> m;
+  priority_queue<int> pq, pq2;
+  for(int i=0; i<n; ++i) {
+  	int x; cin >> x; pq.emplace(x);
+  }
+  
+  for(int i=0; i<m; ++i) {
+  	int x; cin >> x; pq2.emplace(x);
+  }
 
-	int ans = 0;
-	while(!pq2.empty()) {
-		int x = pq2.top(); 
-		if(pq.empty()) break ;
-		if(x > pq.top()) ans += x, pq.pop(), pq2.pop();
-		else pq.pop();
-	}
-	cout << ans;
-	return ;
+  int ans = 0;
+  while(!pq2.empty()) {
+  	int x = pq2.top(); 
+  	if(pq.empty()) break ;
+  	if(x > pq.top()) ans += x, pq.pop(), pq2.pop();
+  	else pq.pop();
+  }
+  cout << ans;
+  return ;
 }
 
 int32_t main() {
-	cin.tie(nullptr)->sync_with_stdio(0);
-	int TC = 1;
-	// cin >> TC; 
-	while(TC--) runcase();
-	return 0;
+  cin.tie(nullptr)->sync_with_stdio(0);
+  int TC = 1;
+  // cin >> TC; 
+  while(TC--) runcase();
+  return 0;
 }

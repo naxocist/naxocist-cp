@@ -15,28 +15,28 @@ int32_t main() {
 
   int res = 0;
   for(int u=1; u<=n; ++u){
-  	int a, l, b, r; cin >> a >> l >> b >> r; 
-  	if(a and b) {
-  		res += abs(l - r);
-  		w[u] = 2*max(l, r);
-  		continue ;
-  	} 
+    int a, l, b, r; cin >> a >> l >> b >> r; 
+    if(a and b) {
+    	res += abs(l - r);
+    	w[u] = 2*max(l, r);
+    	continue ;
+    } 
 
-  	if(a) wl[u] = l;
-  	else lf[u] = l;
-  	if(b) wr[u] = r;
-  	else rt[u] = r;
+    if(a) wl[u] = l;
+    else lf[u] = l;
+    if(b) wr[u] = r;
+    else rt[u] = r;
   }
 
   for(int u=n; u>=1; --u) {
-  	if(!lf[u] and !rt[u]) continue ;
+    if(!lf[u] and !rt[u]) continue ;
 
-  	int ll = wl[u], rr = wr[u];
-  	if(lf[u]) ll = w[lf[u]];
-  	if(rt[u]) rr = w[rt[u]];
+    int ll = wl[u], rr = wr[u];
+    if(lf[u]) ll = w[lf[u]];
+    if(rt[u]) rr = w[rt[u]];
 
-  	res += abs(ll - rr);
-  	w[u] = 2*max(ll, rr);
+    res += abs(ll - rr);
+    w[u] = 2*max(ll, rr);
   }
 
   cout << res;

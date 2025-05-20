@@ -15,14 +15,14 @@ int32_t main() {
   string t = "love", res;
   int w, r, mxr; w = r = mxr = 0;
   for(int i=0; i<m; ++i) {
-  	a[i] = tolower(a[i]), b[i] = tolower(b[i]);
-  	if(t.find(a[i%n]) != string::npos or t.find(b[i]) != string::npos) {
-  		res += 'w';
-  		w++, r++; mxr = max(mxr, r);
-  	}else {
-  		res += '$';
-  		r = 0;
-  	}
+    a[i] = tolower(a[i]), b[i] = tolower(b[i]);
+    if(t.find(a[i%n]) != string::npos or t.find(b[i]) != string::npos) {
+    	res += 'w';
+    	w++, r++; mxr = max(mxr, r);
+    }else {
+    	res += '$';
+    	r = 0;
+    }
   }
 
 

@@ -25,24 +25,24 @@ int ch[5001][21];
 int stm[5001]; 
 map<int, int> npass;
 void runcase() {
-	int c, n; cin >> c >> n;
-	for(int i=0; i<n; ++i) {
-		int id, d, tm, pass; cin >> id >> d >> tm >> pass;
-		if(npass.find(id) != npass.end()) npass[id] = 0;
+  int c, n; cin >> c >> n;
+  for(int i=0; i<n; ++i) {
+  	int id, d, tm, pass; cin >> id >> d >> tm >> pass;
+  	if(npass.find(id) != npass.end()) npass[id] = 0;
 
-		if(pass) npass[id] ++;
-		else ch[id][d] += 20*60;
-	}
+  	if(pass) npass[id] ++;
+  	else ch[id][d] += 20*60;
+  }
 
-	for(auto [team, np] : npass) {
-	}
-	return ;
+  for(auto [team, np] : npass) {
+  }
+  return ;
 }
 
 int32_t main() {
-	cin.tie(nullptr)->sync_with_stdio(0);
-	int TC = 1;
-	// cin >> TC; 
-	while(TC--) runcase();
-	return 0;
+  cin.tie(nullptr)->sync_with_stdio(0);
+  int TC = 1;
+  // cin >> TC; 
+  while(TC--) runcase();
+  return 0;
 }

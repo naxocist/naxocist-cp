@@ -11,15 +11,15 @@ int32_t main() {
   char a, x; string b, y; cin >> a >> b >> x >> y;
 
   if(a == x) {
-  	if(b == y) cout << 1000000;
-  	else if(b.substr(2, 3) == y.substr(2, 3)) cout << 2000;
-  	else if(b.substr(3, 2) == y.substr(3, 2)) cout << 1000;
-  	else cout << 20;
+    if(b == y) cout << 1000000;
+    else if(b.substr(2, 3) == y.substr(2, 3)) cout << 2000;
+    else if(b.substr(3, 2) == y.substr(3, 2)) cout << 1000;
+    else cout << 20;
   }else {
-  	if(b == y) cout << 100000;
-  	else if(b.substr(2, 3) == y.substr(2, 3)) cout << 200;
-  	else if(b.substr(3, 2) == y.substr(3, 2)) cout << 100;
-  	else cout << 0;
+    if(b == y) cout << 100000;
+    else if(b.substr(2, 3) == y.substr(2, 3)) cout << 200;
+    else if(b.substr(3, 2) == y.substr(3, 2)) cout << 100;
+    else cout << 0;
   }
   return 0;
 }

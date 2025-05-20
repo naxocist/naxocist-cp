@@ -11,10 +11,10 @@ int32_t main() {
   int n, d; cin >> n >> d;
   int mn = 0, mx = 0;
   while(n--) {
-  	int h; cin >> h;
-  	if(h % 4 == 0 and h % 3) mn += 10*h/4, mx += 10*h/4;
-  	else if(h % 3 == 0 and h % 4) mn += 10*h/3, mx += 10*h/3;
-  	else mn += 10*h/4, mx += 10*h/3;
+    int h; cin >> h;
+    if(h % 4 == 0 and h % 3) mn += 10*h/4, mx += 10*h/4;
+    else if(h % 3 == 0 and h % 4) mn += 10*h/3, mx += 10*h/3;
+    else mn += 10*h/4, mx += 10*h/3;
   }
 
 

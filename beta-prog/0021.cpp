@@ -21,12 +21,12 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	string s; getline(cin,s);int n=s.size();
-	string v="aeiou";
-	for(int i=0;i<n;++i){
-		cout<<s[i];
-		if(i<n-2 and v.find(s[i])!=string::npos and s[i+1]=='p' and s[i] == s[i+2])i+=2;
-	}
+  string s; getline(cin,s);int n=s.size();
+  string v="aeiou";
+  for(int i=0;i<n;++i){
+  	cout<<s[i];
+  	if(i<n-2 and v.find(s[i])!=string::npos and s[i+1]=='p' and s[i] == s[i+2])i+=2;
+  }
 }
 
 int32_t main() {

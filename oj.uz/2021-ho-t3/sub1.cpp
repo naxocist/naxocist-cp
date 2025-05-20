@@ -24,7 +24,7 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 const int N = 5e3 + 3;
 void solve() {
-	int n; cin >> n;
+  int n; cin >> n;
   vector<int> v(n), rev(n + 1);
   for(int i=0; i<n; ++i) {
     cin >> v[i]; rev[v[i]] = i;

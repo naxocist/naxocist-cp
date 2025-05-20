@@ -21,10 +21,10 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int q;cin>>q;
-	while(q--){
-		long double p;cin>>p;cout<<fixed<<setprecision(0)<<pow(2,p)<<'\n';
-	}	
+  int q;cin>>q;
+  while(q--){
+  	long double p;cin>>p;cout<<fixed<<setprecision(0)<<pow(2,p)<<'\n';
+  }	
 }
 
 int32_t main() {

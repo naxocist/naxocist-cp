@@ -21,11 +21,11 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int d,m;cin>>d>>m;
-	vector<int> days = {0,31,28,31,30,31,30,31,31,30,31,30,31};
-	vector<string> v = {"Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"};
-	int s=d-1; for(int i=1;i<m;++i) s+=days[i]; 
-	cout << v[s%7];
+  int d,m;cin>>d>>m;
+  vector<int> days = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+  vector<string> v = {"Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"};
+  int s=d-1; for(int i=1;i<m;++i) s+=days[i]; 
+  cout << v[s%7];
 }
 
 int32_t main() {

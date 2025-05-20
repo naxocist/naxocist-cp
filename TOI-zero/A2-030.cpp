@@ -14,13 +14,13 @@ int32_t main() {
 
   int a = -1, b = -1;
   for(int i=0; i<n; ++i) {
-  	int s = 0; for(int j=0; j<n; ++j) s += ar[i][j];
-  	if(s&1) a = i;
+    int s = 0; for(int j=0; j<n; ++j) s += ar[i][j];
+    if(s&1) a = i;
   }
 
   for(int i=0; i<n; ++i) {
-  	int s = 0; for(int j=0; j<n; ++j) s += ar[j][i];
-  	if(s&1) b = i;
+    int s = 0; for(int j=0; j<n; ++j) s += ar[j][i];
+    if(s&1) b = i;
   }
 
   if(a != -1 or b != -1) cout << a << ' ' << b;

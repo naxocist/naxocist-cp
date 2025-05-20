@@ -11,12 +11,12 @@ int32_t main() {
   int n; cin >> n;
   int ar[n], s = 0;
   for(int i=0; i<n; ++i) {
-  	int x, y; cin >> x >> y; ar[i] = max(x, y); s += ar[i];
+    int x, y; cin >> x >> y; ar[i] = max(x, y); s += ar[i];
   }
 
   for(int i=0; i<n and n > 1; ++i) {
-  	if(i) cout << " + ";
-  	cout << ar[i];
+    if(i) cout << " + ";
+    cout << ar[i];
   }
 
   if(n > 1) cout << " = ";

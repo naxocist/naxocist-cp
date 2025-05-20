@@ -12,9 +12,9 @@ int32_t main() {
 
   int late = 0, t = n;
   while(t--) {
-  	int x; cin >> x;
-  	if(x > 18) late ++;
-  	else late --;
+    int x; cin >> x;
+    if(x > 18) late ++;
+    else late --;
   }
 
   cout << n + max(0, late - 1);

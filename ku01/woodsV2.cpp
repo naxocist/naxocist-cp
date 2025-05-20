@@ -13,7 +13,7 @@ int32_t main() {
 
   vector<int> h[n];
   for(int i=0; i<n; ++i) {
-  	int k; cin >> k;
+    int k; cin >> k;
     vector<int> v;
     v.pb(-2e9);
     while(k--) {

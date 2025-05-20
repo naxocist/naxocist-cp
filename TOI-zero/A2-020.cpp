@@ -13,14 +13,14 @@ int32_t main() {
   vector<bool> vis(n);
   int mx = 0;
   for(int i=0; i<n; ++i) {
-  	if(vis[i]) continue ;
-  	int u = i, cnt = 0;
-  	do {
-  		u = v[u]; cnt ++; vis[u] = 1;
-  	} while(u != i);
-  	mx = max(mx, cnt);
+    if(vis[i]) continue ;
+    int u = i, cnt = 0;
+    do {
+    	u = v[u]; cnt ++; vis[u] = 1;
+    } while(u != i);
+    mx = max(mx, cnt);
   }
 
-	cout << mx;
+  cout << mx;
   return 0;
 }

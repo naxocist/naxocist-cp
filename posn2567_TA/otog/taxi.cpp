@@ -39,8 +39,8 @@ int main() {
         }
         // u > v
 
-		ll res = tt[v] - tt[u];
-		cout << res << '\n';
+  	ll res = tt[v] - tt[u];
+  	cout << res << '\n';
     }
     return 0;
 }

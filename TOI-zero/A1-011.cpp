@@ -14,7 +14,7 @@ int32_t main() {
   for(char c : s) ar[c - 'A']++; 
 
   for(int i=0; i<s.size(); ++i) {
-  	if(i == 0 or s[i] != s[i-1]) cout << ar[s[i] - 'A'] << s[i];
+    if(i == 0 or s[i] != s[i-1]) cout << ar[s[i] - 'A'] << s[i];
   }
   return 0;
 }

@@ -21,9 +21,9 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int a,b;cin>>a>>b;
-	if(a>b) cout<<2;
-	else cout<<(b+a-1)/a;
+  int a,b;cin>>a>>b;
+  if(a>b) cout<<2;
+  else cout<<(b+a-1)/a;
 }
 
 int32_t main() {

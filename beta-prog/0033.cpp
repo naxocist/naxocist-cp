@@ -22,10 +22,10 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 const int N = 1e4 + 1;
 void solve() {
-	int n;cin>>n;
-	int mx=0,a[N+1]={};
-	while(n--){int x;cin>>x;mx=max(mx,++a[x]);}
-	for(int i=1;i<=N;++i)if(mx==a[i])cout<<i<<' ';
+  int n;cin>>n;
+  int mx=0,a[N+1]={};
+  while(n--){int x;cin>>x;mx=max(mx,++a[x]);}
+  for(int i=1;i<=N;++i)if(mx==a[i])cout<<i<<' ';
 }
 
 int32_t main() {

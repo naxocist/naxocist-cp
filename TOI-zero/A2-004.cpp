@@ -14,8 +14,8 @@ int32_t main() {
 
   int mx = 0;
   while(n--) {
-  	int x; cin >> x;
-  	mx = max(mx, ++ar[x]);
+    int x; cin >> x;
+    mx = max(mx, ++ar[x]);
   }
   cout << mx;
   return 0;

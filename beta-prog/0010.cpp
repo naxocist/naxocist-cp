@@ -21,14 +21,14 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	string s;cin>>s;
-	int a=1;
-	for(auto c:s){
-		if(c=='A')a=a==1?2:a==2?1:a;
-		if(c=='B')a=a==2?3:a==3?2:a;
-		if(c=='C')a=a==1?3:a==3?1:a;
-	}
-	cout<<a;
+  string s;cin>>s;
+  int a=1;
+  for(auto c:s){
+  	if(c=='A')a=a==1?2:a==2?1:a;
+  	if(c=='B')a=a==2?3:a==3?2:a;
+  	if(c=='C')a=a==1?3:a==3?1:a;
+  }
+  cout<<a;
 }
 
 int32_t main() {

@@ -26,44 +26,44 @@ const ll INF = LLONG_MAX;
 ll d[N][N];
 
 void solve() {
-	int n, m, k; cin >> n >> m >> k;
-	for(int i=0; i<n; ++i) {
-		for(int j=0; j<n; ++j) {
-			if(i == j) continue ;
-			d[i][j] = INF;
-		}
-	}
+  int n, m, k; cin >> n >> m >> k;
+  for(int i=0; i<n; ++i) {
+  	for(int j=0; j<n; ++j) {
+  		if(i == j) continue ;
+  		d[i][j] = INF;
+  	}
+  }
 
-	vector<tuple<ll, int, int, int>> edge;
-	for(int i=0; i<m; ++i) {
-		int u, v; ll w; cin >> u >> v >> w; u--, v--;
-		d[u][v] = d[v][u] = w;
-		edge.pb(w, u, v, i);
-	}
+  vector<tuple<ll, int, int, int>> edge;
+  for(int i=0; i<m; ++i) {
+  	int u, v; ll w; cin >> u >> v >> w; u--, v--;
+  	d[u][v] = d[v][u] = w;
+  	edge.pb(w, u, v, i);
+  }
 
-	for(int k=0; k<n; ++k) {
-		for(int i=0; i<n; ++i) {
-			for(int j=0; j<n; ++j) {
-				if(d[i][k] == INF or d[k][j] == INF) continue ;
-				d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
-			}
-		}
-	}
+  for(int k=0; k<n; ++k) {
+  	for(int i=0; i<n; ++i) {
+  		for(int j=0; j<n; ++j) {
+  			if(d[i][k] == INF or d[k][j] == INF) continue ;
+  			d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
+  		}
+  	}
+  }
 
-	vector<tuple<int, int, ll>> q(k); for(auto &[a, b, x] : q) cin >> a >> b >> x, a--, b--;
-	vector<bool> use(m);
-	for(auto [w, u, v, id] : edge) {
-		for(auto [a, b, x] : q) {
-			if(d[a][u] != INF and d[v][b] != INF and d[a][u] + w + d[v][b] <= x) use[id] = 1;
-			if(d[a][v] != INF and d[u][b] != INF and d[a][v] + w + d[u][b] <= x) use[id] = 1;
+  vector<tuple<int, int, ll>> q(k); for(auto &[a, b, x] : q) cin >> a >> b >> x, a--, b--;
+  vector<bool> use(m);
+  for(auto [w, u, v, id] : edge) {
+  	for(auto [a, b, x] : q) {
+  		if(d[a][u] != INF and d[v][b] != INF and d[a][u] + w + d[v][b] <= x) use[id] = 1;
+  		if(d[a][v] != INF and d[u][b] != INF and d[a][v] + w + d[u][b] <= x) use[id] = 1;
 
-			if(use[id]) break ;
-		}
-	}
+  		if(use[id]) break ;
+  	}
+  }
 
-	int res = 0;
-	for(auto u : use) res += u;
-	cout << res;
+  int res = 0;
+  for(auto u : use) res += u;
+  cout << res;
 }
 
 int32_t main() {

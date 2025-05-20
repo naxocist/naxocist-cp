@@ -22,12 +22,12 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 
 void solve() {
-	int n;cin>>n;
-	ll res=1,r=n/2;
-	for(int i=n;n-i+1<=r;i--)res*=i; 
-	for(int i=2;i<=r;++i)res/=i;
-	if(n%2)res*=2;
-	cout<<res;
+  int n;cin>>n;
+  ll res=1,r=n/2;
+  for(int i=n;n-i+1<=r;i--)res*=i; 
+  for(int i=2;i<=r;++i)res/=i;
+  if(n%2)res*=2;
+  cout<<res;
 }
 
 int32_t main() {

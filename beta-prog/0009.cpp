@@ -21,11 +21,11 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int a[3];for(int i=0;i<3;++i)cin>>a[i];sort(a,a+3);
-	int k=3;
-	while(k--){
-		char c;cin>>c;cout<<a[c-'A']<<' ';
-	}
+  int a[3];for(int i=0;i<3;++i)cin>>a[i];sort(a,a+3);
+  int k=3;
+  while(k--){
+  	char c;cin>>c;cout<<a[c-'A']<<' ';
+  }
 }
 
 int32_t main() {

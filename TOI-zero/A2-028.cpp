@@ -11,6 +11,6 @@ int32_t main() {
   int n, res = 0; string a, b; cin >> n >> a >> b;
   for(int i=0; i<n; ++i) res += a[i] + b[i] - '0' - '0' != 9;
   if(res) cout << "NO " << res;
-	else cout << "YES";
+  else cout << "YES";
   return 0;
 }

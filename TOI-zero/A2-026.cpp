@@ -11,12 +11,12 @@ int32_t main() {
   int q; cin >> q;
   int mx = INT_MIN, c = 0; string t;
   while(q--) {
-  	string s; int x; cin >> s >> x;
-  	c += x > 15;
-  	if(x > mx) {
-  		t = s;
-  		mx = x;
-  	}
+    string s; int x; cin >> s >> x;
+    c += x > 15;
+    if(x > mx) {
+    	t = s;
+    	mx = x;
+    }
   }
   cout << c << ln << t << ' ' << mx;
   return 0;

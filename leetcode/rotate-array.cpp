@@ -21,21 +21,21 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int n;cin >> n;
-	int ar[n][n];
-	for(int i=0;i<n;++i)for(int j=0;j<n;++j)cin>>ar[i][j];
+  int n;cin >> n;
+  int ar[n][n];
+  for(int i=0;i<n;++i)for(int j=0;j<n;++j)cin>>ar[i][j];
 
-	int l=0,r=n-1;
-	while(l<r){
-		for(int i=0;i<r-l;++i){
-			swap(ar[l][l+i],ar[r-i][l]);
-			swap(ar[r-i][l],ar[r][r-i]);
-			swap(ar[r][r-i],ar[l+i][r]);
-		}
-		l++,r--;
-	}
+  int l=0,r=n-1;
+  while(l<r){
+  	for(int i=0;i<r-l;++i){
+  		swap(ar[l][l+i],ar[r-i][l]);
+  		swap(ar[r-i][l],ar[r][r-i]);
+  		swap(ar[r][r-i],ar[l+i][r]);
+  	}
+  	l++,r--;
+  }
 
-	for(int i=0;i<n;++i)for(int j=0;j<n;++j)cout<<ar[i][j]<<" \n"[j==n-1];
+  for(int i=0;i<n;++i)for(int j=0;j<n;++j)cout<<ar[i][j]<<" \n"[j==n-1];
 }
 
 int32_t main() {

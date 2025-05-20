@@ -25,35 +25,35 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 int cnt[21][21];
 void runcase() {
-	int n; cin >> n;
-	int a, b, aa, bb; cin >> a >> b >> aa >> bb;
+  int n; cin >> n;
+  int a, b, aa, bb; cin >> a >> b >> aa >> bb;
 
-	memset(cnt, -1, sizeof cnt);
-	using pi = pair<int, int>;
-	queue<pi> q; q.emplace(a, b);
-	cnt[a][b] = 0;
-	while(q.size()) {
-		auto [x, y] = q.front(); q.pop();
-		if(x == aa and y == bb) {
-			cout << cnt[x][y];
-			return ;
-		}
-		int tx[] = {-1, -2, -2, -1, 1, 2, 2, 1};
-		int ty[] = {-2, -1, 1, 2, 2, 1, -1, -2};
-		for(int i=0; i<8; ++i) {
-			int nx = x + tx[i], ny = y + ty[i];
-			if(nx < 0 or nx >= n or ny < 0 or ny >= n or cnt[nx][ny] != -1) continue ;
-			cnt[nx][ny] = cnt[x][y] + 1;
-			q.emplace(nx, ny);
-		}
-	}
-	return ;
+  memset(cnt, -1, sizeof cnt);
+  using pi = pair<int, int>;
+  queue<pi> q; q.emplace(a, b);
+  cnt[a][b] = 0;
+  while(q.size()) {
+  	auto [x, y] = q.front(); q.pop();
+  	if(x == aa and y == bb) {
+  		cout << cnt[x][y];
+  		return ;
+  	}
+  	int tx[] = {-1, -2, -2, -1, 1, 2, 2, 1};
+  	int ty[] = {-2, -1, 1, 2, 2, 1, -1, -2};
+  	for(int i=0; i<8; ++i) {
+  		int nx = x + tx[i], ny = y + ty[i];
+  		if(nx < 0 or nx >= n or ny < 0 or ny >= n or cnt[nx][ny] != -1) continue ;
+  		cnt[nx][ny] = cnt[x][y] + 1;
+  		q.emplace(nx, ny);
+  	}
+  }
+  return ;
 }
 
 int32_t main() {
-	cin.tie(nullptr)->sync_with_stdio(0);
-	int TC = 1;
-	// cin >> TC; 
-	while(TC--) runcase();
-	return 0;
+  cin.tie(nullptr)->sync_with_stdio(0);
+  int TC = 1;
+  // cin >> TC; 
+  while(TC--) runcase();
+  return 0;
 }

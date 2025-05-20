@@ -21,17 +21,17 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int n;cin>>n;
-	priority_queue<int> pq;
-	int z=0;
-	while(n--){
-		int x;cin>>x;if(x)pq.emplace(-x);
-		z+=x==0;
-	}
-	while(pq.size()){
-		cout<<-pq.top();pq.pop();
-		while(z-->0)cout<<0;
-	}
+  int n;cin>>n;
+  priority_queue<int> pq;
+  int z=0;
+  while(n--){
+  	int x;cin>>x;if(x)pq.emplace(-x);
+  	z+=x==0;
+  }
+  while(pq.size()){
+  	cout<<-pq.top();pq.pop();
+  	while(z-->0)cout<<0;
+  }
 }
 
 int32_t main() {

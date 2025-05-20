@@ -10,17 +10,17 @@ using namespace std;
 using ll = long long;
 
 int main() {
-	cin.tie(nullptr)->sync_with_stdio(false);
-	string s, t; cin >> s;
-	for(auto c : s) {
-		for(int i=0; i<t.size(); ++i) {
-			if(c <= t[i]) {
-				t[i] = c; goto g;
-			}
-		}
-		t += c;
-		g:;
-	}
-	cout << t.size();
-	return 0;
+  cin.tie(nullptr)->sync_with_stdio(false);
+  string s, t; cin >> s;
+  for(auto c : s) {
+  	for(int i=0; i<t.size(); ++i) {
+  		if(c <= t[i]) {
+  			t[i] = c; goto g;
+  		}
+  	}
+  	t += c;
+  	g:;
+  }
+  cout << t.size();
+  return 0;
 }

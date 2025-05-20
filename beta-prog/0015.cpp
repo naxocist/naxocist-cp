@@ -21,7 +21,7 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int a,b,c;cin>>a>>b>>c;cout<<max(c-b,b-a)-1;
+  int a,b,c;cin>>a>>b>>c;cout<<max(c-b,b-a)-1;
 }
 
 int32_t main() {

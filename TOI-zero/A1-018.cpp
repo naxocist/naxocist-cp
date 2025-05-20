@@ -17,7 +17,7 @@ int32_t main() {
   else if(x == 4) cout << "IV";
   else if(x == 9) cout << "IX";
   else {
-  	cout << "V"; x -= 5; while(x--) cout << "I";
+    cout << "V"; x -= 5; while(x--) cout << "I";
   }
   return 0;
 }

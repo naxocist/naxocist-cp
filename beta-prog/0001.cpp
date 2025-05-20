@@ -21,15 +21,15 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int a, b, c; cin >> a >> b >> c; a += b + c;
-	if(a>=80)cout<<"A";
-	else if(a>=75)cout<<"B+";
-	else if(a>=70)cout<<"B";
-	else if(a>=65)cout<<"C+";
-	else if(a>=60)cout<<"C";
-	else if(a>=55)cout<<"D+";
-	else if(a>=50)cout<<"D";
-	else cout<<"F";
+  int a, b, c; cin >> a >> b >> c; a += b + c;
+  if(a>=80)cout<<"A";
+  else if(a>=75)cout<<"B+";
+  else if(a>=70)cout<<"B";
+  else if(a>=65)cout<<"C+";
+  else if(a>=60)cout<<"C";
+  else if(a>=55)cout<<"D+";
+  else if(a>=50)cout<<"D";
+  else cout<<"F";
 }
 
 int32_t main() {

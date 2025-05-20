@@ -25,22 +25,22 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng); }
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 void runcase() {
-	int n; cin >> n;
-	map<ll, pii> mp;
-	for(int i=0; i<n; ++i) {
-		int x, y; cin >> x >> y;
-		mp[(1ll*x*x+1ll*y*y)*((ll)1e5+1)+i] = pii(x, y);
-	}
-	for(auto [x, y] : mp) {
-		cout << "(" << y.first << ", " << y.second << ")\n";
-	}
-	return ;
+  int n; cin >> n;
+  map<ll, pii> mp;
+  for(int i=0; i<n; ++i) {
+  	int x, y; cin >> x >> y;
+  	mp[(1ll*x*x+1ll*y*y)*((ll)1e5+1)+i] = pii(x, y);
+  }
+  for(auto [x, y] : mp) {
+  	cout << "(" << y.first << ", " << y.second << ")\n";
+  }
+  return ;
 }
 
 int32_t main() {
-	cin.tie(nullptr)->sync_with_stdio(0);
-	int TC = 1;
-	// cin >> TC; 
-	while(TC--) runcase();
-	return 0;
+  cin.tie(nullptr)->sync_with_stdio(0);
+  int TC = 1;
+  // cin >> TC; 
+  while(TC--) runcase();
+  return 0;
 }

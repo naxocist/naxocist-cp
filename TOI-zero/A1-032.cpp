@@ -11,8 +11,8 @@ int32_t main() {
   int n; cin >> n;
 
   for(int i=0; i<3 and n >= 1; ++i){
-  	int k = n; while(k--) cout << "*"; cout << ln;
-  	n -= 2;
+    int k = n; while(k--) cout << "*"; cout << ln;
+    n -= 2;
   }
   return 0;
 }

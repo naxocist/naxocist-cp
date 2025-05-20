@@ -24,34 +24,34 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng); }
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 void runcase() {
-	map<int, int> mp;
-	int n; cin >> n;
-	for(int i=0; i<n; ++i) {
-		int x, y; cin >> x >> y;
-		mp[-x] += y;
-	}
-	cin >> n;
-	for(int i=0; i<n; ++i) {
-		int x, y; cin >> x >> y;
-		mp[-x] += y;
-	}
+  map<int, int> mp;
+  int n; cin >> n;
+  for(int i=0; i<n; ++i) {
+  	int x, y; cin >> x >> y;
+  	mp[-x] += y;
+  }
+  cin >> n;
+  for(int i=0; i<n; ++i) {
+  	int x, y; cin >> x >> y;
+  	mp[-x] += y;
+  }
 
-	bool ok = false;
-	for(auto [a, b] : mp) {
-		if(b == 0) continue ;
-		ok = true;
-		cout << -a << ' ' << b << ln;
-	}
+  bool ok = false;
+  for(auto [a, b] : mp) {
+  	if(b == 0) continue ;
+  	ok = true;
+  	cout << -a << ' ' << b << ln;
+  }
 
-	if(!ok) cout << 0;
+  if(!ok) cout << 0;
 
-	return ;
+  return ;
 }
 
 int32_t main() {
-	cin.tie(nullptr)->sync_with_stdio(0);
-	int TC = 1;
-	// cin >> TC; 
-	while(TC--) runcase();
-	return 0;
+  cin.tie(nullptr)->sync_with_stdio(0);
+  int TC = 1;
+  // cin >> TC; 
+  while(TC--) runcase();
+  return 0;
 }

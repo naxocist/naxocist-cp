@@ -16,16 +16,16 @@ int32_t main() {
 
   queue<int> q; for(int i=1; i<=n; ++i) q.push(i);
 
-	while(q.size() > 1) {
-		int u = q.front(); q.pop();
-		int v = q.front(); q.pop();
+  while(q.size() > 1) {
+  	int u = q.front(); q.pop();
+  	int v = q.front(); q.pop();
 
-		int w = ar[u][v];
-		if(w == u and c == v) c = 0, w = v;
-		if(w == v and c == u) c = 0, w = u;
-		q.push(w);
-	}
+  	int w = ar[u][v];
+  	if(w == u and c == v) c = 0, w = v;
+  	if(w == v and c == u) c = 0, w = u;
+  	q.push(w);
+  }
 
-	cout << q.front();
+  cout << q.front();
   return 0;
 }

@@ -21,16 +21,16 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int a,b,c;cin>>a>>b>>c;
-	int cnt=0;
-	while(a!=1||b!=1||c!=1){
-		int mx=max({a,b,c});
-		if(mx==a)a/=2;
-		else if(mx==b)b/=2;
-		else c/=2;
-		cnt++;
-	}
-	cout<<cnt;
+  int a,b,c;cin>>a>>b>>c;
+  int cnt=0;
+  while(a!=1||b!=1||c!=1){
+  	int mx=max({a,b,c});
+  	if(mx==a)a/=2;
+  	else if(mx==b)b/=2;
+  	else c/=2;
+  	cnt++;
+  }
+  cout<<cnt;
 }
 
 int32_t main() {

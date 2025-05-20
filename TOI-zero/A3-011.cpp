@@ -12,9 +12,9 @@ int32_t main() {
 
   set<int> st;
   for(int i=0; i<n; ++i) {
-  	for(int j=i, s=0; j<n; ++j) s += v[j], st.insert(s);
+    for(int j=i, s=0; j<n; ++j) s += v[j], st.insert(s);
   }
 
-	cout << st.size();
+  cout << st.size();
   return 0;
 }

@@ -18,14 +18,14 @@ int32_t main() {
 
   int mx, mx2; mx = mx2 = INT_MIN;
   for(int i=1; i<n+2; ++i) {
-  	int cw = x[i] - x[i-1]; 
-  	for(int j=1; j<m+2; ++j) {
-  		int ch = y[j] - y[j-1];
+    int cw = x[i] - x[i-1]; 
+    for(int j=1; j<m+2; ++j) {
+    	int ch = y[j] - y[j-1];
 
-  		int area = cw * ch;
-  		if(area > mx) mx2 = mx, mx = area;
-  		else if(area > mx2) mx2 = area;
-  	}
+    	int area = cw * ch;
+    	if(area > mx) mx2 = mx, mx = area;
+    	else if(area > mx2) mx2 = area;
+    }
   }
 
   cout << mx << ' ' << mx2;

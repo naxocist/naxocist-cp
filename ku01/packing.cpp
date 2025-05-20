@@ -12,7 +12,7 @@ int32_t main() {
 
   int res = INT_MAX;
   for(int i=l; i<=min({n, m, r}); ++i) {
-  	res = min(res, (m%i)*(n%i));
+    res = min(res, (m%i)*(n%i));
   }
 
   if(res == INT_MAX) res = 0;

@@ -17,17 +17,17 @@ int32_t main() {
   else if(c == 'J') res += 2*x;
 
   if(z == 'R') {
-  	if(a == 1) res += 12*b;
-  	if(a == 2) res += 18*b;
-  	if(a == 3) res += 25*b;
+    if(a == 1) res += 12*b;
+    if(a == 2) res += 18*b;
+    if(a == 3) res += 25*b;
   } else if(z == 'T') {
-  	if(a == 1) res += 15*b;
-  	if(a == 2) res += 20*b;
-  	if(a == 3) res += 30*b;
+    if(a == 1) res += 15*b;
+    if(a == 2) res += 20*b;
+    if(a == 3) res += 30*b;
   } else if(z == 'M') {
-  	if(a == 1) res += 10*b;
-  	if(a == 2) res += 15*b;
-  	if(a == 3) res += 20*b;
+    if(a == 1) res += 10*b;
+    if(a == 2) res += 15*b;
+    if(a == 3) res += 20*b;
   }
 
   cout << res;

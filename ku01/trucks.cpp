@@ -15,8 +15,8 @@ int32_t main() {
 
   int cl = -1, cr = -1, res = 0;
   for(auto [l, r] : v) {
-  	if(l <= cr) cl = max(cl, l), cr = min(cr, r); 
-  	else res++, cl = l, cr = r;
+    if(l <= cr) cl = max(cl, l), cr = min(cr, r); 
+    else res++, cl = l, cr = r;
   }
 
   cout << res;

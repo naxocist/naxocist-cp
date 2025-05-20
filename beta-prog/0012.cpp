@@ -23,22 +23,22 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 const int N = 1e3 + 1;
 char a[5][N];
 void solve() {
-	string s;cin>>s;int n=s.size();
-	for(int h=0;h<n;++h){
-		int mc=2+h*4;
-		for(int i=-2;i<=2;++i){
-			for(int j=-2;j<=2;++j){
-				char &t=a[2+i][mc+j];
-				if(abs(i)+abs(j)==2)t=(h+1)%3 and t!='*'?'#':'*';
-				else t='.';
-			}
-		}
-		a[2][mc]=s[h];
-	}
-	for(int i=0;i<5;++i){
-		for(int j=0;j<4*n+1;++j)cout<<a[i][j];
-		cout<<'\n';
-	}
+  string s;cin>>s;int n=s.size();
+  for(int h=0;h<n;++h){
+  	int mc=2+h*4;
+  	for(int i=-2;i<=2;++i){
+  		for(int j=-2;j<=2;++j){
+  			char &t=a[2+i][mc+j];
+  			if(abs(i)+abs(j)==2)t=(h+1)%3 and t!='*'?'#':'*';
+  			else t='.';
+  		}
+  	}
+  	a[2][mc]=s[h];
+  }
+  for(int i=0;i<5;++i){
+  	for(int j=0;j<4*n+1;++j)cout<<a[i][j];
+  	cout<<'\n';
+  }
 }
 
 int32_t main() {

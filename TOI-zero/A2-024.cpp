@@ -12,10 +12,10 @@ int32_t main() {
   cin >> l >> n >> a >> b >> c;
 
   while(n--) {
-  	cin >> t >> p;
-  	if(t % a == 0) x += p;
-  	if(t % b == 0) y += p;
-  	if(t % c == 0) z += p;
+    cin >> t >> p;
+    if(t % a == 0) x += p;
+    if(t % b == 0) y += p;
+    if(t % c == 0) z += p;
   }
 
   int mx = max({x, y, z});

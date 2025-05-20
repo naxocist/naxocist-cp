@@ -11,10 +11,10 @@ int32_t main() {
   char c; int x; cin >> c >> x;
 
   while(x--) {
-  	if(c == 'R') cout << "Red", c = 'G';
-  	else if(c == 'G') cout << "Green", c = 'B';
-  	else if(c == 'B') cout << "Blue", c = 'R';
-  	cout << ' ';
+    if(c == 'R') cout << "Red", c = 'G';
+    else if(c == 'G') cout << "Green", c = 'B';
+    else if(c == 'B') cout << "Blue", c = 'R';
+    cout << ' ';
   }
   return 0;
 }

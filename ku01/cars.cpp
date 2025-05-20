@@ -13,9 +13,9 @@ int32_t main() {
 
   int res = 0
   for(int i=n-2; i>=0; --i) {
-  	if(v[i] < v[i+1]) res ++, v[i] = v[i+1];
+    if(v[i] < v[i+1]) res ++, v[i] = v[i+1];
   }
 
-	cout << res;
+  cout << res;
   return 0;
 }

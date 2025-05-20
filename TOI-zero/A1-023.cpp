@@ -11,13 +11,13 @@ int32_t main() {
   int t; char c; cin >> t >> c; c = tolower(c);
 
   if(c == 'c') {
-	  if(t <= 0) cout << "solid";
-	  else if(t < 100) cout << "liquid";
-	  else cout << "gas";
+    if(t <= 0) cout << "solid";
+    else if(t < 100) cout << "liquid";
+    else cout << "gas";
   }else {
-	  if(t <= 32) cout << "solid";
-	  else if(t < 212) cout << "liquid";
-	  else cout << "gas";
+    if(t <= 32) cout << "solid";
+    else if(t < 212) cout << "liquid";
+    else cout << "gas";
   }
   return 0;
 }

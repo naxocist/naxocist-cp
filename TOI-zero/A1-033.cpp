@@ -12,8 +12,8 @@ int32_t main() {
 
   int x = 0;
   while(n--) {
-  	char c; cin >> c; c = tolower(c);
-  	if(c == 'a' or c == 'e' or c == 'i' or c == 'o' or c == 'u') x ++;
+    char c; cin >> c; c = tolower(c);
+    if(c == 'a' or c == 'e' or c == 'i' or c == 'o' or c == 'u') x ++;
   }
 
   cout << x;

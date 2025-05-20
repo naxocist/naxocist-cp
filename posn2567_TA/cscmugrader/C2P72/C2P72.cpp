@@ -22,29 +22,29 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng); }
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 void runcase() {
-	int n; cin >> n; vector<int> v(n); for(auto &x : v) cin >> x;
+  int n; cin >> n; vector<int> v(n); for(auto &x : v) cin >> x;
 
-	vector<int> mxx(n+1);
-	int mx = -INF;
-	for(int i=n-1; i>=0; --i) {
-		mx = max(mx, v[i]);
-		mxx[i] = max(mxx[i+1], mx - v[i]);
-	}
-	int res = max(0, *max_element(all(mxx)));
-	int mn = INF;
-	for(int i=0; i<n; ++i) {
-		mn = min(mn, v[i]);
-		res = max(res, v[i] - mn + mxx[i+1]);
-	}
+  vector<int> mxx(n+1);
+  int mx = -INF;
+  for(int i=n-1; i>=0; --i) {
+  	mx = max(mx, v[i]);
+  	mxx[i] = max(mxx[i+1], mx - v[i]);
+  }
+  int res = max(0, *max_element(all(mxx)));
+  int mn = INF;
+  for(int i=0; i<n; ++i) {
+  	mn = min(mn, v[i]);
+  	res = max(res, v[i] - mn + mxx[i+1]);
+  }
 
-	cout << res;
-	return ;
+  cout << res;
+  return ;
 }
 
 int32_t main() {
-	cin.tie(nullptr)->sync_with_stdio(0);
-	int TC = 1;
-	// cin >> TC; 
-	while(TC--) runcase();
-	return 0;
+  cin.tie(nullptr)->sync_with_stdio(0);
+  int TC = 1;
+  // cin >> TC; 
+  while(TC--) runcase();
+  return 0;
 }

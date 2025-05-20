@@ -19,10 +19,10 @@ int32_t main() {
 
   for(int i=0; i<n; ++i) {
     auto [x, y] = v[i];
-  	for(int j=0; j<n; ++j) {
+    for(int j=0; j<n; ++j) {
       auto [a, b] = v[j];
       if(x < a and b < y) covered[j].pb(y-x, i), cover[i].pb(j); 
-  	}
+    }
 
     covered[i].pb(y-x, i); cover[i].pb(i);
   }

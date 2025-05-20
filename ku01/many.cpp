@@ -14,13 +14,13 @@ int32_t main() {
   vector<int> cnt(1e5);
   ll res = 0;
   for(int l=0, r=0, d=0; ;) {
-  	for(; d<k and r<n; ) {
-  		if(cnt[v[r++]]++ == 0) d ++;
-  	}
-  	if(d<k and r==n) break ;
-  	
-  	res += n-r+1;
-  	if(--cnt[v[l++]] == 0) d--;
+    for(; d<k and r<n; ) {
+    	if(cnt[v[r++]]++ == 0) d ++;
+    }
+    if(d<k and r==n) break ;
+    
+    res += n-r+1;
+    if(--cnt[v[l++]] == 0) d--;
   }
 
   cout << res;

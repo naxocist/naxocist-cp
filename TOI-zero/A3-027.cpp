@@ -13,14 +13,14 @@ int32_t main() {
   for(int i=0; i<n; ++i) for(int j=0; j<m; ++j) cin >> ar[i][j];
 
   for(int i=n-2; i>=0; --i) {
-  	for(int j=0; j<m; ++j) {
-  		if(ar[i][j] == '*') ar[i+1][j] = '*';
-  	}
+    for(int j=0; j<m; ++j) {
+    	if(ar[i][j] == '*') ar[i+1][j] = '*';
+    }
   }
 
   for(int i=0; i<n; ++i) {
-  	for(int j=0; j<m; ++j) cout << ar[i][j] << ' ';
-  	cout << ln;
+    for(int j=0; j<m; ++j) cout << ar[i][j] << ' ';
+    cout << ln;
   }
   return 0;
 }

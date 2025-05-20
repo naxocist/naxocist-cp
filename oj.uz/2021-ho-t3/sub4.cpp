@@ -26,44 +26,44 @@ const int N = 1e4 + 3;
 int fw[N];
 
 void upd(int i, int x) {
-	for(;i<N;i+=i&-i) fw[i] += x;
+  for(;i<N;i+=i&-i) fw[i] += x;
 }
 
 int qry(int i, int s = 0) {
-	for(;i>0;i-=i&-i) s += fw[i]; return s;
+  for(;i>0;i-=i&-i) s += fw[i]; return s;
 }
 
 void solve() {
-	int n; cin >> n;
-	vector<int> h(n), revh(n);
+  int n; cin >> n;
+  vector<int> h(n), revh(n);
   for(int i=0; i<n; ++i) {
     cin >> h[i]; h[i] --;
-		revh[h[i]] = i;
+  	revh[h[i]] = i;
   }
 
-	vector<int> dp(n);
-	for(int i=1; i<n; ++i) {
-		dp[i] = INT_MAX;
-		for(int j=0; j<=i; ++j) {
-			// force interval [j, i]
-			vector<int> tar(n, -1);
+  vector<int> dp(n);
+  for(int i=1; i<n; ++i) {
+  	dp[i] = INT_MAX;
+  	for(int j=0; j<=i; ++j) {
+  		// force interval [j, i]
+  		vector<int> tar(n, -1);
 
-			int pos = 0;
-			for(int c=0; c<j; ++c) tar[revh[c]] = revh[c], pos++;
-			for(int c=i; c>=j; --c) tar[revh[c]] = n + pos++;
+  		int pos = 0;
+  		for(int c=0; c<j; ++c) tar[revh[c]] = revh[c], pos++;
+  		for(int c=i; c>=j; --c) tar[revh[c]] = n + pos++;
 
-			memset(fw, 0, sizeof fw);
-			int cost = 0;
-			for(int a=n-1; a>=0; --a) {
-				if(tar[a] == -1) continue ; 
-				cost += qry(tar[a]);
-				upd(tar[a]+1, 1);
-			}
-			dp[i] = min(dp[i], (j ? dp[j-1] : 0) + cost);
-		}
-	}
+  		memset(fw, 0, sizeof fw);
+  		int cost = 0;
+  		for(int a=n-1; a>=0; --a) {
+  			if(tar[a] == -1) continue ; 
+  			cost += qry(tar[a]);
+  			upd(tar[a]+1, 1);
+  		}
+  		dp[i] = min(dp[i], (j ? dp[j-1] : 0) + cost);
+  	}
+  }
 
-	cout << dp[n-1];
+  cout << dp[n-1];
 }
 
 int32_t main() {

@@ -23,17 +23,17 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 #define f first
 #define s second
 void solve() {
-	int n;cin>>n;
-	vector<pii> v(n);for(auto &[a,b]:v)cin>>a>>b;
-	auto cal=[&](int i, int j, int k)->double{
-		auto [x1,y1]=v[i];
-		auto [x2,y2]=v[j];
-		auto [x3,y3]=v[k];
-		return abs(x1*y2+x2*y3+x3*y1-y1*x2-y2*x3-y3*x1)/2;
-	};
-	double mx=0;
-	for(int i=0;i<n;++i) for(int j=i+1;j<n;++j) for(int k=j+1;k<n;++k) mx=max(mx,cal(i,j,k));
-	cout<<fixed<<setprecision(3)<<mx;
+  int n;cin>>n;
+  vector<pii> v(n);for(auto &[a,b]:v)cin>>a>>b;
+  auto cal=[&](int i, int j, int k)->double{
+  	auto [x1,y1]=v[i];
+  	auto [x2,y2]=v[j];
+  	auto [x3,y3]=v[k];
+  	return abs(x1*y2+x2*y3+x3*y1-y1*x2-y2*x3-y3*x1)/2;
+  };
+  double mx=0;
+  for(int i=0;i<n;++i) for(int j=i+1;j<n;++j) for(int k=j+1;k<n;++k) mx=max(mx,cal(i,j,k));
+  cout<<fixed<<setprecision(3)<<mx;
 }
 
 int32_t main() {

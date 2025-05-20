@@ -13,28 +13,28 @@ int32_t main() {
 
   vector<int> h[n];
   for(int i=0; i<n; ++i) {
-  	int k; cin >> k;
-  	h[i].resize(k); 
-  	for(auto &x : h[i]) cin >> x;
+    int k; cin >> k;
+    h[i].resize(k); 
+    for(auto &x : h[i]) cin >> x;
   }
 
-	for(int l=0; l<=L; ++l) {
+  for(int l=0; l<=L; ++l) {
     vector<vector<int>> dp(n, vector<int>(w + 2));
-		for(int i=0; i<n; ++i) {
-			for(auto x : h[i]) dp[i][max(1,x-l)] ++, dp[i][min(w+1, x+l+1)]--;
-		}
+  	for(int i=0; i<n; ++i) {
+  		for(auto x : h[i]) dp[i][max(1,x-l)] ++, dp[i][min(w+1, x+l+1)]--;
+  	}
 
-		for(int j=1; j<=w; ++j) {
-			int c = 0;
-			for(int i=0; i<n; ++i) {
-				dp[i][j] += dp[i][j-1];
+  	for(int j=1; j<=w; ++j) {
+  		int c = 0;
+  		for(int i=0; i<n; ++i) {
+  			dp[i][j] += dp[i][j-1];
         if(dp[i][j]) c++;
-			}
+  		}
 
-			if(c == n) cout << 1, exit(0);
-		}
-	}
+  		if(c == n) cout << 1, exit(0);
+  	}
+  }
 
-	cout << 0;
+  cout << 0;
   return 0;
 }

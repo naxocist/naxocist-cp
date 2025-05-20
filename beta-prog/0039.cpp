@@ -21,14 +21,14 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int n,m;cin>>n>>m;
-	bool no[n+1]={false};
-	while(m--){int x;cin>>x;no[x]=1;}
-	vector<int> v(n);iota(all(v),1);
-	do{
-		if(no[v[0]])continue;
-		for(auto x:v)cout<<x<<' ';cout<<'\n';
-	}while(next_permutation(all(v)));
+  int n,m;cin>>n>>m;
+  bool no[n+1]={false};
+  while(m--){int x;cin>>x;no[x]=1;}
+  vector<int> v(n);iota(all(v),1);
+  do{
+  	if(no[v[0]])continue;
+  	for(auto x:v)cout<<x<<' ';cout<<'\n';
+  }while(next_permutation(all(v)));
 }
 
 int32_t main() {

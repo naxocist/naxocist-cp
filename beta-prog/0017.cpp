@@ -21,8 +21,8 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	vector<int> v(4);for(auto &x:v)cin>>x;sort(all(v));
-	cout<<v[0]*v[2];
+  vector<int> v(4);for(auto &x:v)cin>>x;sort(all(v));
+  cout<<v[0]*v[2];
 }
 
 int32_t main() {

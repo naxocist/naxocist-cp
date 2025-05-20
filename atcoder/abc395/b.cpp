@@ -23,16 +23,16 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng); }
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 void solve() {
-	int n; cin >> n;
+  int n; cin >> n;
 
-	for(int i=0; i<n; ++i) {
-		for(int j=0; j<n; ++j) {
-			int mn = min({i, j, n-i-1, n-j-1});
-			cout << ".#"[mn&1^1];
-		}
-		cout << ln;
-	}
-	return ;
+  for(int i=0; i<n; ++i) {
+  	for(int j=0; j<n; ++j) {
+  		int mn = min({i, j, n-i-1, n-j-1});
+  		cout << ".#"[mn&1^1];
+  	}
+  	cout << ln;
+  }
+  return ;
 }
 
 int32_t main() {

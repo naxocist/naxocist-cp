@@ -13,10 +13,10 @@ int32_t main() {
   vector<bool> vis(n);
   int u = 0, c = 0;
   while(!vis[u]) {
-  	c ++;
-  	vis[u] = 1;
-  	if(u == t) break ;
-  	u = (u + k)%n;
+    c ++;
+    vis[u] = 1;
+    if(u == t) break ;
+    u = (u + k)%n;
   }
 
   cout << c;

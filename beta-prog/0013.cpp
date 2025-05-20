@@ -21,17 +21,17 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int s=0;
-	vector<int> v(9);for(auto &x:v)cin>>x,s+=x;
-	s-=100;
-	for(int i=0;i<9;++i){
-		for(int j=i+1;j<9;++j){
-			if(v[i]+v[j]==s){
-				for(int k=0;k<9;++k)if(k!=i and k!=j)cout<<v[k]<<'\n';
-				return ;
-			}
-		}
-	}
+  int s=0;
+  vector<int> v(9);for(auto &x:v)cin>>x,s+=x;
+  s-=100;
+  for(int i=0;i<9;++i){
+  	for(int j=i+1;j<9;++j){
+  		if(v[i]+v[j]==s){
+  			for(int k=0;k<9;++k)if(k!=i and k!=j)cout<<v[k]<<'\n';
+  			return ;
+  		}
+  	}
+  }
 }
 
 int32_t main() {

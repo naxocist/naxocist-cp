@@ -21,12 +21,12 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int n; cin >> n;
-	set<string> s;
-	while(n--){
-		string t;cin>>t;s.insert(t);
-	}
-	for(auto x:s)cout<<x<<'\n';
+  int n; cin >> n;
+  set<string> s;
+  while(n--){
+  	string t;cin>>t;s.insert(t);
+  }
+  for(auto x:s)cout<<x<<'\n';
 }
 
 int32_t main() {

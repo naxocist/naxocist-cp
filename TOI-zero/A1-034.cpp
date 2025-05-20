@@ -12,7 +12,7 @@ int32_t main() {
 
   int mn = INT_MAX;
   while(q--) {
-  	int x; cin >> x; mn = min(mn, x);
+    int x; cin >> x; mn = min(mn, x);
   }
   cout << mn;
   return 0;

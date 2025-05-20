@@ -22,16 +22,16 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 int s[10],b[10];
 
 void solve() {
-	int n;cin>>n;for(int i=0;i<n;++i)cin>>s[i]>>b[i];
-	int res=INT_MAX;
-	for(int i=1;i<1<<n;++i){
-		int ss=1,bb=0;
-		for(int j=0;j<10;++j){
-			if(i&(1<<j))ss*=s[j],bb+=b[j];
-		}
-		res=min(res,abs(ss-bb));
-	}
-	cout<<res;
+  int n;cin>>n;for(int i=0;i<n;++i)cin>>s[i]>>b[i];
+  int res=INT_MAX;
+  for(int i=1;i<1<<n;++i){
+  	int ss=1,bb=0;
+  	for(int j=0;j<10;++j){
+  		if(i&(1<<j))ss*=s[j],bb+=b[j];
+  	}
+  	res=min(res,abs(ss-bb));
+  }
+  cout<<res;
 }
 
 int32_t main() {

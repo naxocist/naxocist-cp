@@ -21,13 +21,13 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int n,m;cin >> n >> m;
-	int a[n][m];
-	for(int i=0;i<n;++i)for(int j=0;j<m;++j)cin>>a[i][j];
-	for(int i=0;i<n;++i)for(int j=0;j<m;++j){
-		int x; cin >> x; ar[i][j] += x;
-	}
-	for(int i=0;i<n;++i)for(int j=0;j<m;++j)cout<<a[i][j]<<" \n"[j==m-1];
+  int n,m;cin >> n >> m;
+  int a[n][m];
+  for(int i=0;i<n;++i)for(int j=0;j<m;++j)cin>>a[i][j];
+  for(int i=0;i<n;++i)for(int j=0;j<m;++j){
+  	int x; cin >> x; ar[i][j] += x;
+  }
+  for(int i=0;i<n;++i)for(int j=0;j<m;++j)cout<<a[i][j]<<" \n"[j==m-1];
 }
 
 int32_t main() {

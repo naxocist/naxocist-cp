@@ -9,6 +9,6 @@ using namespace std;
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
   char c; cin >> c; 
-	cout << (c == 'a' or c == 'e' or c == 'i' or c == 'o' or c == 'u' ? "yes" : "no");
+  cout << (c == 'a' or c == 'e' or c == 'i' or c == 'o' or c == 'u' ? "yes" : "no");
   return 0;
 }

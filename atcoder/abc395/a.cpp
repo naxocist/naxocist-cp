@@ -23,17 +23,17 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng); }
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 void solve() {
-	int n; cin >> n;
-	int p = -1;
-	for(int i=0; i<n; ++i) {
-		int x; cin >> x;
-		if(x <= p) {
-			cout << "No" << ln; return ;
-		}
-		p = x;
-	}
+  int n; cin >> n;
+  int p = -1;
+  for(int i=0; i<n; ++i) {
+  	int x; cin >> x;
+  	if(x <= p) {
+  		cout << "No" << ln; return ;
+  	}
+  	p = x;
+  }
 
-	cout << "Yes" << ln;
+  cout << "Yes" << ln;
   return ;
 }
 

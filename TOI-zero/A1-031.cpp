@@ -13,8 +13,8 @@ int32_t main() {
 
   string res;
   for(int i=n-1, j=0; i>=0; --i, ++j) {
-  	if(j%3 == 0 and j) res += ",";
-  	res += s[i];
+    if(j%3 == 0 and j) res += ",";
+    res += s[i];
   }
   reverse(all(res));
   cout << res;

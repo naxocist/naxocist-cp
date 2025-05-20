@@ -21,15 +21,15 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int mx=0,r=0;
-	for(int i=0;i<5;++i){
-		int s=0;
-		for(int j=0;j<4;++j){
-			int x;cin>>x;s+=x;
-		}
-		if(s>mx)mx=s,r=i;
-	}
-	cout<<r+1<<' '<<mx;
+  int mx=0,r=0;
+  for(int i=0;i<5;++i){
+  	int s=0;
+  	for(int j=0;j<4;++j){
+  		int x;cin>>x;s+=x;
+  	}
+  	if(s>mx)mx=s,r=i;
+  }
+  cout<<r+1<<' '<<mx;
 }
 
 int32_t main() {

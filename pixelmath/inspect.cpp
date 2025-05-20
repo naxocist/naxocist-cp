@@ -35,34 +35,34 @@ ll binpow(ll x, ll y) {
 }
 
 ll cnr(int n, int r) {
-	if(r>n) return 0;
-	return (((fac[n]*inv[n-r])%mod)*inv[r])%mod;
+  if(r>n) return 0;
+  return (((fac[n]*inv[n-r])%mod)*inv[r])%mod;
 }
 
 void solve() {
-	int n, m, s; cin >> n >> m >> s;
-	fac[0] = inv[0] = 1;
-	for(int i=1; i<K; ++i) {
-		fac[i] = fac[i-1]*i, fac[i]%=mod;
-		inv[i] = binpow(fac[i], mod-2);
-	}
+  int n, m, s; cin >> n >> m >> s;
+  fac[0] = inv[0] = 1;
+  for(int i=1; i<K; ++i) {
+  	fac[i] = fac[i-1]*i, fac[i]%=mod;
+  	inv[i] = binpow(fac[i], mod-2);
+  }
 
-	set<int> z;
-	while(s--) {
-		int x; cin >> x;
-		z.insert(x);
-	}
+  set<int> z;
+  while(s--) {
+  	int x; cin >> x;
+  	z.insert(x);
+  }
 
-	for(int i=1; i<=n; ++i){
-		int t; cin >> t;
-		mx[i][0] = mn[i][0] = t;
-		int R = t%m, g = __gcd(i+1, n);
-		if(g > 1 and z.find(R) != z.end()) qsa[i]++;
-		else if(g == 1 and z.find(R) == z.end()) qsb[i]++;
-		else qsc[i]++;
-	}
+  for(int i=1; i<=n; ++i){
+  	int t; cin >> t;
+  	mx[i][0] = mn[i][0] = t;
+  	int R = t%m, g = __gcd(i+1, n);
+  	if(g > 1 and z.find(R) != z.end()) qsa[i]++;
+  	else if(g == 1 and z.find(R) == z.end()) qsb[i]++;
+  	else qsc[i]++;
+  }
 
-	for(int i=1;i<=n;++i) qsa[i]+=qsa[i-1], qsb[i]+=qsb[i-1], qsc[i]+=qsc[i-1];
+  for(int i=1;i<=n;++i) qsa[i]+=qsa[i-1], qsb[i]+=qsb[i-1], qsc[i]+=qsc[i-1];
 
   for(int i=1; i<21; ++i) {
     for(int j=1; j+(1<<i)-1<=n; ++j) {
@@ -73,16 +73,16 @@ void solve() {
 
   int q; cin >> q;
   while(q--) {
-  	int l, r, o; cin >> l >> r >> o;
-  	int sa = qsa[r]-qsa[l-1], sb = qsb[r]-qsb[l-1], sc = qsc[r]-qsc[l-1]; 
+    int l, r, o; cin >> l >> r >> o;
+    int sa = qsa[r]-qsa[l-1], sb = qsb[r]-qsb[l-1], sc = qsc[r]-qsc[l-1]; 
 
-  	int lg = log2(r-l+1);
-  	int qmn = min(mn[l][lg], mn[r-(1<<lg)+1][lg]);
-  	int qmx = max(mx[l][lg], mx[r-(1<<lg)+1][lg]);
+    int lg = log2(r-l+1);
+    int qmn = min(mn[l][lg], mn[r-(1<<lg)+1][lg]);
+    int qmx = max(mx[l][lg], mx[r-(1<<lg)+1][lg]);
 
-  	cout << sa << ' ' << sb << ' ' << sc << ' ' << qmx - qmn << ' ';
-  	if(o) cout << cnr(n+m,max({sa, sb, sc}));
-  	cout << '\n';
+    cout << sa << ' ' << sb << ' ' << sc << ' ' << qmx - qmn << ' ';
+    if(o) cout << cnr(n+m,max({sa, sb, sc}));
+    cout << '\n';
   }
   return ;
 }

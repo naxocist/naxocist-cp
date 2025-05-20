@@ -21,18 +21,18 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int n;cin>>n;
-	string s;cin>>s;
-	int a,b,c;a=b=c=0;
-	for(int i=0;i<n;++i){
-		if(s[i]=="ABC"[i%3])a++;
-		if(s[i]=="BABC"[i%4])b++;
-		if(s[i]=="CCAABB"[i%6])c++;
-	}
-	int mx=max({a,b,c});cout<<mx<<'\n';
-	if(mx==a)cout<<"Adrian\n";
-	if(mx==b)cout<<"Bruno\n";
-	if(mx==c)cout<<"Goran\n";
+  int n;cin>>n;
+  string s;cin>>s;
+  int a,b,c;a=b=c=0;
+  for(int i=0;i<n;++i){
+  	if(s[i]=="ABC"[i%3])a++;
+  	if(s[i]=="BABC"[i%4])b++;
+  	if(s[i]=="CCAABB"[i%6])c++;
+  }
+  int mx=max({a,b,c});cout<<mx<<'\n';
+  if(mx==a)cout<<"Adrian\n";
+  if(mx==b)cout<<"Bruno\n";
+  if(mx==c)cout<<"Goran\n";
 }
 
 int32_t main() {

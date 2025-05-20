@@ -24,30 +24,30 @@ const int N = 1e3 + 1;
 vector<pll> d[N];
 
 void solve() {
-	ll n,m,h,t,p;cin>>n>>m>>h>>t>>p;
+  ll n,m,h,t,p;cin>>n>>m>>h>>t>>p;
 
-	while(m--){
-		ll x,tt,hh;cin>>x>>tt>>hh;
-		d[x].pb(tt,hh);
-	}
-	vector<int> r;
-	for(int i=1;i<=n;++i){
-		if(h==0){ r.pb(i); continue; }
-		auto v=d[i];
-		sort(all(v));
-		v.pb(LLONG_MAX,v.back().second);
-		bool ok=1,ok2=0;
-		for(int j=1;j<v.size();++j){
-			auto [t1,h1]=v[j-1]; 
-			auto [t2,h2]=v[j];
-			if(h1>=h){ r.pb(i); break ; }
-			if((t2-t)*p>h1)ok=0;
-			if(!ok) break ;
-			if(h2>=h){ r.pb(i); break ; }
-		}
-	}
+  while(m--){
+  	ll x,tt,hh;cin>>x>>tt>>hh;
+  	d[x].pb(tt,hh);
+  }
+  vector<int> r;
+  for(int i=1;i<=n;++i){
+  	if(h==0){ r.pb(i); continue; }
+  	auto v=d[i];
+  	sort(all(v));
+  	v.pb(LLONG_MAX,v.back().second);
+  	bool ok=1,ok2=0;
+  	for(int j=1;j<v.size();++j){
+  		auto [t1,h1]=v[j-1]; 
+  		auto [t2,h2]=v[j];
+  		if(h1>=h){ r.pb(i); break ; }
+  		if((t2-t)*p>h1)ok=0;
+  		if(!ok) break ;
+  		if(h2>=h){ r.pb(i); break ; }
+  	}
+  }
 
-	cout<<r.size()<<ln;for(auto x:r)cout<<x<<' ';
+  cout<<r.size()<<ln;for(auto x:r)cout<<x<<' ';
 }
 
 int32_t main() {

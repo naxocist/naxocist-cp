@@ -15,28 +15,28 @@ int32_t main() {
   int n, m; cin >> n >> m;
 
   for(int i=0; i<m; ++i){
-  	int k; cin >> k;
-  	vector<int> vec(k); for(auto &u : vec) cin >> u, u--;
+    int k; cin >> k;
+    vector<int> vec(k); for(auto &u : vec) cin >> u, u--;
 
-  	int v; cin >> v; v--;
-  	req[i] = vec.size();
-  	for(auto u : vec) adj[u].pb(v, i);
+    int v; cin >> v; v--;
+    req[i] = vec.size();
+    for(auto u : vec) adj[u].pb(v, i);
   }
 
-	int res = 0;
-	queue<int> q;
-	q.emplace(0);
-	vector<bool> vis(n);
-	while(q.size()) {
-		int u = q.front(); q.pop();
-		if(vis[u]) continue ;
-		vis[u] = 1;
-		res ++;
-		for(auto [v, i] : adj[u]) {
-			if(--req[i] == 0) q.emplace(v);
-		}
-	}
+  int res = 0;
+  queue<int> q;
+  q.emplace(0);
+  vector<bool> vis(n);
+  while(q.size()) {
+  	int u = q.front(); q.pop();
+  	if(vis[u]) continue ;
+  	vis[u] = 1;
+  	res ++;
+  	for(auto [v, i] : adj[u]) {
+  		if(--req[i] == 0) q.emplace(v);
+  	}
+  }
 
-	cout << res;
+  cout << res;
   return 0;
 }

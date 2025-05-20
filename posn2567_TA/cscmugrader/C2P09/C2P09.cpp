@@ -22,32 +22,32 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng); }
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 void runcase() {
-	int n, k; cin >> n >> k;
-	unordered_map<int, int> cnt;
-	map<int, int> pos;
-	vector<int> v;
-	for(int i=0; i<n; ++i) {
-		int x; cin >> x; cnt[x] ++;
-		if(pos.find(x) == pos.end()) pos[x] = i;
-		v.pb(x);
-	}
+  int n, k; cin >> n >> k;
+  unordered_map<int, int> cnt;
+  map<int, int> pos;
+  vector<int> v;
+  for(int i=0; i<n; ++i) {
+  	int x; cin >> x; cnt[x] ++;
+  	if(pos.find(x) == pos.end()) pos[x] = i;
+  	v.pb(x);
+  }
 
-	map<pii, int> mp;
-	for(auto x : v) {
-		mp[pii(-cnt[x], pos[x])] = x;
-	}
-	for(auto [a, b] : mp) {
-		int k = -a.first;
-		while(k--) cout << b << ' ';
-	}
-	cout << ln;
-	return ;
+  map<pii, int> mp;
+  for(auto x : v) {
+  	mp[pii(-cnt[x], pos[x])] = x;
+  }
+  for(auto [a, b] : mp) {
+  	int k = -a.first;
+  	while(k--) cout << b << ' ';
+  }
+  cout << ln;
+  return ;
 }
 
 int32_t main() {
-	cin.tie(nullptr)->sync_with_stdio(0);
-	int TC = 5;
-	// cin >> TC; 
-	while(TC--) runcase();
-	return 0;
+  cin.tie(nullptr)->sync_with_stdio(0);
+  int TC = 5;
+  // cin >> TC; 
+  while(TC--) runcase();
+  return 0;
 }

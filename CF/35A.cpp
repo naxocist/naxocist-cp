@@ -29,9 +29,9 @@ int main() {
 
   int x; cin >> x;
   for(int i=0; i<3; ++i) {
-  	int a, b; cin >> a >> b;
-  	if(x == a) x = b;
-  	else if(x == b) x = a;
+    int a, b; cin >> a >> b;
+    if(x == a) x = b;
+    else if(x == b) x = a;
   }
 
   cout << x << ln;

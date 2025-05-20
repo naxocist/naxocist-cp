@@ -24,18 +24,18 @@ const int mod = 1e9 + 7;
 int t[10001][5001];
 
 void solve() {
-	t[1][1]=1;
-	for(int i=2;i<=10000;++i){
-		for(int j=1;j<=5000;++j){
-			t[i][j]=t[i-1][j]+t[i-1][j-1];
-			t[i][j]%=mod;
-		}
-	}
-	int q;cin>>q;
-	while(q--){
-		int a,b;cin>>a>>b;
-		cout<<t[a+1][b+1]<<'\n';
-	}
+  t[1][1]=1;
+  for(int i=2;i<=10000;++i){
+  	for(int j=1;j<=5000;++j){
+  		t[i][j]=t[i-1][j]+t[i-1][j-1];
+  		t[i][j]%=mod;
+  	}
+  }
+  int q;cin>>q;
+  while(q--){
+  	int a,b;cin>>a>>b;
+  	cout<<t[a+1][b+1]<<'\n';
+  }
 }
 
 int32_t main() {

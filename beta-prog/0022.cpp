@@ -21,18 +21,18 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
-	int n;cin>>n;
-	bool c=0;
-	int d=n/2,w=n;
-	if(n&1^1)c=1,n++,w=n-2;
-	for(int i=0;i<n;++i){
-		if(c and i==n/2)continue;
-		for(int j=0;j<w;++j){
-			if(abs(i-n/2)+abs(j-w/2)==d)cout<<"*";
-			else cout<<"-";
-		}
-		cout<<"\n";
-	}
+  int n;cin>>n;
+  bool c=0;
+  int d=n/2,w=n;
+  if(n&1^1)c=1,n++,w=n-2;
+  for(int i=0;i<n;++i){
+  	if(c and i==n/2)continue;
+  	for(int j=0;j<w;++j){
+  		if(abs(i-n/2)+abs(j-w/2)==d)cout<<"*";
+  		else cout<<"-";
+  	}
+  	cout<<"\n";
+  }
 }
 
 int32_t main() {
