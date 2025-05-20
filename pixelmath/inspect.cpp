@@ -43,23 +43,23 @@ void solve() {
   int n, m, s; cin >> n >> m >> s;
   fac[0] = inv[0] = 1;
   for(int i=1; i<K; ++i) {
-  	fac[i] = fac[i-1]*i, fac[i]%=mod;
-  	inv[i] = binpow(fac[i], mod-2);
+    fac[i] = fac[i-1]*i, fac[i]%=mod;
+    inv[i] = binpow(fac[i], mod-2);
   }
 
   set<int> z;
   while(s--) {
-  	int x; cin >> x;
-  	z.insert(x);
+    int x; cin >> x;
+    z.insert(x);
   }
 
   for(int i=1; i<=n; ++i){
-  	int t; cin >> t;
-  	mx[i][0] = mn[i][0] = t;
-  	int R = t%m, g = __gcd(i+1, n);
-  	if(g > 1 and z.find(R) != z.end()) qsa[i]++;
-  	else if(g == 1 and z.find(R) == z.end()) qsb[i]++;
-  	else qsc[i]++;
+    int t; cin >> t;
+    mx[i][0] = mn[i][0] = t;
+    int R = t%m, g = __gcd(i+1, n);
+    if(g > 1 and z.find(R) != z.end()) qsa[i]++;
+    else if(g == 1 and z.find(R) == z.end()) qsb[i]++;
+    else qsc[i]++;
   }
 
   for(int i=1;i<=n;++i) qsa[i]+=qsa[i-1], qsb[i]+=qsb[i-1], qsc[i]+=qsc[i-1];

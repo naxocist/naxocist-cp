@@ -38,19 +38,19 @@ void solve() {
   vector<int> h(n), revh(n);
   for(int i=0; i<n; ++i) {
     cin >> h[i]; h[i] --;
-  	revh[h[i]] = i;
+    revh[h[i]] = i;
   }
 
   vector<int> dp(n);
   for(int i=1; i<n; ++i) {
-  	dp[i] = INT_MAX;
-  	for(int j=0; j<=i; ++j) {
-  		// force interval [j, i]
-  		memset(fw, 0, sizeof fw);
-  		int cost = 0;
-  		for(int c=n-1; c>i; --c) upd(revh[c]+1, 1);
-  		dp[i] = min(dp[i], (j ? dp[j-1] : 0) + cost);
-  	}
+    dp[i] = INT_MAX;
+    for(int j=0; j<=i; ++j) {
+      // force interval [j, i]
+      memset(fw, 0, sizeof fw);
+      int cost = 0;
+      for(int c=n-1; c>i; --c) upd(revh[c]+1, 1);
+      dp[i] = min(dp[i], (j ? dp[j-1] : 0) + cost);
+    }
   }
 
   cout << dp[n-1];
@@ -63,3 +63,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

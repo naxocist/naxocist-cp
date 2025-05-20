@@ -23,12 +23,12 @@ int32_t main() {
 
     if(c == 'a' and i-1 > 0 and s[i-1] != 'r' and s[i-1] != 'a') cout << "no " << i, exit(0);
     if(c == 'r') {
-    	if(i == n-1) cout << "no " << i, exit(0);
-  		if(s[i+1] != 'a') cout << "no " << i+1, exit(0);
+      if(i == n-1) cout << "no " << i, exit(0);
+      if(s[i+1] != 'a') cout << "no " << i+1, exit(0);
     }
     if(c == 'b') {
-    	if(i == n-1) cout << "no " << i, exit(0);
-    	if(s[i+1] != 'x') cout << "no " << i+1, exit(0);
+      if(i == n-1) cout << "no " << i, exit(0);
+      if(s[i+1] != 'x') cout << "no " << i+1, exit(0);
     }
   }
 
@@ -36,3 +36,4 @@ int32_t main() {
   else cout << "yes " << mxa;
   return 0;
 }
+

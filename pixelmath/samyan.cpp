@@ -21,8 +21,8 @@ int32_t main() {
 
   for(int i=0; i<n; ++i) {
     for(int j=0; j<m; ++j) {
-    	char in, out; int cur, nxt; cin >> cur >> in >> nxt >> out;
-    	ar[i][op[in]] = {nxt, out};
+      char in, out; int cur, nxt; cin >> cur >> in >> nxt >> out;
+      ar[i][op[in]] = {nxt, out};
     }
   }
 

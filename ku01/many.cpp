@@ -15,7 +15,7 @@ int32_t main() {
   ll res = 0;
   for(int l=0, r=0, d=0; ;) {
     for(; d<k and r<n; ) {
-    	if(cnt[v[r++]]++ == 0) d ++;
+      if(cnt[v[r++]]++ == 0) d ++;
     }
     if(d<k and r==n) break ;
     

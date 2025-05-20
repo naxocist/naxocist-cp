@@ -27,18 +27,18 @@ void runcase() {
   map<int, int> pos;
   vector<int> v;
   for(int i=0; i<n; ++i) {
-  	int x; cin >> x; cnt[x] ++;
-  	if(pos.find(x) == pos.end()) pos[x] = i;
-  	v.pb(x);
+    int x; cin >> x; cnt[x] ++;
+    if(pos.find(x) == pos.end()) pos[x] = i;
+    v.pb(x);
   }
 
   map<pii, int> mp;
   for(auto x : v) {
-  	mp[pii(-cnt[x], pos[x])] = x;
+    mp[pii(-cnt[x], pos[x])] = x;
   }
   for(auto [a, b] : mp) {
-  	int k = -a.first;
-  	while(k--) cout << b << ' ';
+    int k = -a.first;
+    while(k--) cout << b << ' ';
   }
   cout << ln;
   return ;

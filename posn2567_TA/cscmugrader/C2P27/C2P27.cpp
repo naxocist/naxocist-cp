@@ -26,9 +26,9 @@ void runcase() {
   map<string, int> mp;
   priority_queue<int, string> pq;
   for(int i=0; i<n; ++i) {
-  	string s; int t; cin >> s >> t;
-  	mp[s] = t;
-  	pq.emplace(mp[s])
+    string s; int t; cin >> s >> t;
+    mp[s] = t;
+    pq.emplace(mp[s])
   }
   return ;
 }

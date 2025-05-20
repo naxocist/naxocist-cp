@@ -24,14 +24,14 @@ void solve() {
   int n,k;cin>>n>>k;
   vector<bool> v(n+1);
   for(int i=2;i<=n;++i){
-  	if(v[i])continue;
-  	for(int j=i;j<=n;j+=i){
-  		if(v[j])continue; v[j]=1;
-  		if(!(--k)){
-  			cout<<j;
-  			return;
-  		}
-  	}
+    if(v[i])continue;
+    for(int j=i;j<=n;j+=i){
+      if(v[j])continue; v[j]=1;
+      if(!(--k)){
+        cout<<j;
+        return;
+      }
+    }
   }
 }
 
@@ -42,3 +42,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

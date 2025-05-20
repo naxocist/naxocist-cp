@@ -27,21 +27,21 @@ bool ok[N][N];
 void solve() {
   int n,m;cin>>n>>m;
   for(int i=0;i<n;++i){
-  	for(int j=0;j<n;++j)d[i][j]=INF;
-  	d[i][i]=0;
+    for(int j=0;j<n;++j)d[i][j]=INF;
+    d[i][i]=0;
   }
   while(m--){
-  	int u,v;cin>>u>>v;u--,v--;
-  	d[u][v]=d[v][u]=ok[u][v]=ok[v][u]=1;
+    int u,v;cin>>u>>v;u--,v--;
+    d[u][v]=d[v][u]=ok[u][v]=ok[v][u]=1;
   }
   for(int k=0;k<n;++k) for(int i=0;i<n;++i) for(int j=0;j<n;++j) if(i!=j and d[i][k]!=INF and d[k][j]!=INF) d[i][j]=min(d[i][j],d[i][k]+d[k][j]); 
-  	
+    
   int mn=d[0][n-1]-1,res=0;
   for(int i=0;i<n;++i)
-  	for(int j=i+1;j<n;++j){
-  		if(ok[i][j])continue;
-  		if(d[0][i]+d[j][n-1]<mn or d[0][j]+d[i][n-1]<mn)res++;
-  	}
+    for(int j=i+1;j<n;++j){
+      if(ok[i][j])continue;
+      if(d[0][i]+d[j][n-1]<mn or d[0][j]+d[i][n-1]<mn)res++;
+    }
   
   cout<<res;
 }
@@ -53,3 +53,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

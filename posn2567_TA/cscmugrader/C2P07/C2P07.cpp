@@ -15,12 +15,12 @@ void runcase() {
   using T = tuple<ll, int, int>;
   vector<T> v;
   for(int i=0; i<n; ++i) {
-  	int x, y; cin >> x >> y;
-  	v.emplace_back((1ll*x*x+1ll*y*y)*((ll)1e5+1)+i, x, y) ;
+    int x, y; cin >> x >> y;
+    v.emplace_back((1ll*x*x+1ll*y*y)*((ll)1e5+1)+i, x, y) ;
   }
   sort(all(v));
   for(auto [a, b, c] : v) {
-  	cout << "(" << b << ", " << c << ")\n";
+    cout << "(" << b << ", " << c << ")\n";
   }
   return ;
 }

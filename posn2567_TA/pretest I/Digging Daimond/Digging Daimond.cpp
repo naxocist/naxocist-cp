@@ -18,26 +18,26 @@ void count_component() {
   memset(vis, 0, sizeof vis);
   for(int i=0; i<x; ++i) for(int j=0; j<y; ++j) for(int k=0; k<z; ++k) {
 
-  	if(vis[i][j][k] or ar[i][j][k] == 0) continue ;
+    if(vis[i][j][k] or ar[i][j][k] == 0) continue ;
 
-  	cnt ++;
-  	queue<T> q; q.emplace(i, j, k); vis[i][j][k] = 1;
-  	while(q.size()) {
-  		auto [a, b, c] = q.front(); q.pop();
+    cnt ++;
+    queue<T> q; q.emplace(i, j, k); vis[i][j][k] = 1;
+    while(q.size()) {
+      auto [a, b, c] = q.front(); q.pop();
 
-  		for(int di=-1; di<=1; ++di) {
-  			for(int dj=-1; dj<=1; ++dj) {
-  				for(int dk=-1; dk<=1; ++dk) {
-  					if(abs(di) + abs(dj) + abs(dk) >= 2) continue ; // continue if there are >= 2 axis changes
+      for(int di=-1; di<=1; ++di) {
+        for(int dj=-1; dj<=1; ++dj) {
+          for(int dk=-1; dk<=1; ++dk) {
+            if(abs(di) + abs(dj) + abs(dk) >= 2) continue ; // continue if there are >= 2 axis changes
 
-  					int ii = a + di, jj = b + dj, kk = c + dk;
-  					if(!ok(ii, jj, kk) or !ar[ii][jj][kk] or vis[ii][jj][kk]) continue ;
-  					vis[ii][jj][kk] = 1;
-  					q.emplace(ii, jj, kk);
-  				}
-  			}
-  		}
-  	}
+            int ii = a + di, jj = b + dj, kk = c + dk;
+            if(!ok(ii, jj, kk) or !ar[ii][jj][kk] or vis[ii][jj][kk]) continue ;
+            vis[ii][jj][kk] = 1;
+            q.emplace(ii, jj, kk);
+          }
+        }
+      }
+    }
 
   }
 
@@ -47,21 +47,22 @@ void count_component() {
 int main(){
   cin >> x >> y >> z;
   for(int i=0; i<x; ++i) {
-  	for(int j=0; j<y; ++j) {
-  		for(int k=0; k<z; ++k) 
-  			cin >> ar[i][j][k];
-  	}
+    for(int j=0; j<y; ++j) {
+      for(int k=0; k<z; ++k) 
+        cin >> ar[i][j][k];
+    }
   }
 
   count_component();
   int q; cin >> q;
   while(q--) {
-  	int a, b, c, r; cin >> a >> b >> c >> r; // input bomb coordinate and radius
-  	for(int i=a-r; i<=a+r; ++i) {
-  		for(int j=b-r; j<=b+r; ++j) {
-  			for(int k=c-r; k<=c+r; ++k) if(ok(i,j,k)) ar[i][j][k] = 0;
-  		}
-  	}
+    int a, b, c, r; cin >> a >> b >> c >> r; // input bomb coordinate and radius
+    for(int i=a-r; i<=a+r; ++i) {
+      for(int j=b-r; j<=b+r; ++j) {
+        for(int k=c-r; k<=c+r; ++k) if(ok(i,j,k)) ar[i][j][k] = 0;
+      }
+    }
   }
   count_component();
 }
+

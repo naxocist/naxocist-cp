@@ -28,26 +28,26 @@ void runcase() {
   using T = tuple<int, int, int, string, string>;
   vector<T> v; 
   for(int i=0; i<n; ++i) {
-  	int d, y; string m, name; cin >> d >> m >> y >> name;
-  	v.pb(d, um[m], y, name, m);
+    int d, y; string m, name; cin >> d >> m >> y >> name;
+    v.pb(d, um[m], y, name, m);
   }
 
 
   int q; cin >> q;
   while(q--) {
-  	int s, d, y; string m; cin >> s >> d >> m >> y;
+    int s, d, y; string m; cin >> s >> d >> m >> y;
 
-  	using T2 = tuple<int, int, int>;
-  	T2 tar = T2(d, um[m], y);
-  	int l = 0, r = n-1;
-  	string res = "";
-  	while(l < r) {
-  		int m = l + (r-l)/2;
-  		if(v[m] == )
-  	}
+    using T2 = tuple<int, int, int>;
+    T2 tar = T2(d, um[m], y);
+    int l = 0, r = n-1;
+    string res = "";
+    while(l < r) {
+      int m = l + (r-l)/2;
+      if(v[m] == )
+    }
 
-  	if(res == "") printf("key: %d/%s/%d not found\n",d,m.c_str(),y);
-  	else printf("key: %d/%s/%d found %s",d,m.c_str(),y,res);
+    if(res == "") printf("key: %d/%s/%d not found\n",d,m.c_str(),y);
+    else printf("key: %d/%s/%d found %s",d,m.c_str(),y,res);
   }
   return ;
 }
@@ -59,3 +59,4 @@ int32_t main() {
   while(TC--) runcase();
   return 0;
 }
+

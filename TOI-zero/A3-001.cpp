@@ -8,7 +8,6 @@ using namespace std;
 const int N = 1e3 + 3;
 int lf[N], rt[N], wl[N], wr[N], w[N];
 
-
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
   int n; cin >> n;
@@ -17,9 +16,9 @@ int32_t main() {
   for(int u=1; u<=n; ++u){
     int a, l, b, r; cin >> a >> l >> b >> r; 
     if(a and b) {
-    	res += abs(l - r);
-    	w[u] = 2*max(l, r);
-    	continue ;
+      res += abs(l - r);
+      w[u] = 2*max(l, r);
+      continue ;
     } 
 
     if(a) wl[u] = l;

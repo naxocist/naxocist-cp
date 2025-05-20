@@ -29,28 +29,28 @@ void solve() {
 
   int n = s.size();
   for(int sz=1; sz<=n; ++sz) {
-  	for(int l=0; l<n; ++l) {
-			int r = l + sz - 1;
-  		if(r >= n) break ;
+    for(int l=0; l<n; ++l) {
+      int r = l + sz - 1;
+      if(r >= n) break ;
 
-  		for(int h=0; h<=100; ++h) {
-  			if(sz == 1) {
-  				dp[l][r][h] = (h == (s[l]-'0') ? 0 : INF);
-  				continue ;
-  			}
-  			dp[l][r][h] = INF;
-  			for(int k=l; k<r; ++k) {
-  				for(int g=0; g<=h; ++g) {
-  					if(dp[l][k][g] != INF and dp[k+1][r][h-g] != INF)
-  						dp[l][r][h] = min(dp[l][r][h], dp[l][k][g] + dp[k+1][r][h-g] + 1);
-  				}
-  			}
-  		}
+      for(int h=0; h<=100; ++h) {
+        if(sz == 1) {
+          dp[l][r][h] = (h == (s[l]-'0') ? 0 : INF);
+          continue ;
+        }
+        dp[l][r][h] = INF;
+        for(int k=l; k<r; ++k) {
+          for(int g=0; g<=h; ++g) {
+            if(dp[l][k][g] != INF and dp[k+1][r][h-g] != INF)
+              dp[l][r][h] = min(dp[l][r][h], dp[l][k][g] + dp[k+1][r][h-g] + 1);
+          }
+        }
+      }
 
-  		if(sz > 9) continue ;
-  		int t = stoi(s.substr(l,sz));
-  		if(t <= 100) dp[l][r][t] = 0;
-  	}
+      if(sz > 9) continue ;
+      int t = stoi(s.substr(l,sz));
+      if(t <= 100) dp[l][r][t] = 0;
+    }
   }
 
   int res = dp[0][n-1][k];
@@ -65,3 +65,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

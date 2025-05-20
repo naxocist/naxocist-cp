@@ -18,14 +18,15 @@ int32_t main() {
   int mx = 0;
   for(int i=0; i<n; ++i) {
     for(int j=0; j<m; ++j) {
-    	if(ar[i][j]) continue ;
-    	int r = 0;
-    	for(int h=i-1; h<=i+1; ++h) for(int k=j-1; k<=j+1; ++k) 
-    		if(h >= 0 and h < n and k >= 0 and k < m) r += ar[h][k];
-    	mx = max(mx, r);
+      if(ar[i][j]) continue ;
+      int r = 0;
+      for(int h=i-1; h<=i+1; ++h) for(int k=j-1; k<=j+1; ++k) 
+        if(h >= 0 and h < n and k >= 0 and k < m) r += ar[h][k];
+      mx = max(mx, r);
     }
   }
 
   cout << mx;
   return 0;
 }
+

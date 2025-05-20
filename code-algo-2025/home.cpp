@@ -28,26 +28,26 @@ void solve() {
   int n,k;cin>>n>>k;
 
   for(int i=0;i<k;++i){
-  	int x;cin>>x;
-  	vector<int> st;
-  	while(x--){
-  		int t;cin>>t;
-  		adj[t].pb(i);
-  		st.pb(t);
-  	}
-  	sort(all(st));
-  	mp[st].pb(i);
+    int x;cin>>x;
+    vector<int> st;
+    while(x--){
+      int t;cin>>t;
+      adj[t].pb(i);
+      st.pb(t);
+    }
+    sort(all(st));
+    mp[st].pb(i);
   }
 
   vector<int> dp(k,1);
   for(int i=1;i<n;++i){
-  	vector<int> dp2(k);
-  	for(auto &[a,b]:mp){
-  		int t=0;
-  		for(auto &x:a)t+=dp[x],t%=mod;
-  		for(auto &y:b)dp2[y]=t;
-  	}
-  	dp=dp2;
+    vector<int> dp2(k);
+    for(auto &[a,b]:mp){
+      int t=0;
+      for(auto &x:a)t+=dp[x],t%=mod;
+      for(auto &y:b)dp2[y]=t;
+    }
+    dp=dp2;
   }
   int res=0;
   for(int i=0;i<k;++i)res+=dp[i],res%=mod;
@@ -61,3 +61,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

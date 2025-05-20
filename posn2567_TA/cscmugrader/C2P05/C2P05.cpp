@@ -33,19 +33,19 @@ void runcase() {
   queue<pi> q; q.emplace(a, b);
   cnt[a][b] = 0;
   while(q.size()) {
-  	auto [x, y] = q.front(); q.pop();
-  	if(x == aa and y == bb) {
-  		cout << cnt[x][y];
-  		return ;
-  	}
-  	int tx[] = {-1, -2, -2, -1, 1, 2, 2, 1};
-  	int ty[] = {-2, -1, 1, 2, 2, 1, -1, -2};
-  	for(int i=0; i<8; ++i) {
-  		int nx = x + tx[i], ny = y + ty[i];
-  		if(nx < 0 or nx >= n or ny < 0 or ny >= n or cnt[nx][ny] != -1) continue ;
-  		cnt[nx][ny] = cnt[x][y] + 1;
-  		q.emplace(nx, ny);
-  	}
+    auto [x, y] = q.front(); q.pop();
+    if(x == aa and y == bb) {
+      cout << cnt[x][y];
+      return ;
+    }
+    int tx[] = {-1, -2, -2, -1, 1, 2, 2, 1};
+    int ty[] = {-2, -1, 1, 2, 2, 1, -1, -2};
+    for(int i=0; i<8; ++i) {
+      int nx = x + tx[i], ny = y + ty[i];
+      if(nx < 0 or nx >= n or ny < 0 or ny >= n or cnt[nx][ny] != -1) continue ;
+      cnt[nx][ny] = cnt[x][y] + 1;
+      q.emplace(nx, ny);
+    }
   }
   return ;
 }
@@ -57,3 +57,4 @@ int32_t main() {
   while(TC--) runcase();
   return 0;
 }
+

@@ -15,12 +15,12 @@ int32_t main() {
 
   while(q--) {
     int i, j; cin >> i >> j;
-  	for(int h=max(0, i-2); h<=min(n-1, i+2); ++h) {
-  		for(int k=max(0, j-2); k<=min(m-1, j+2); ++k) {
-  			int val = 3 - max(abs(i-h), abs(j-k));
-  			ar[h][k] = max(ar[h][k], val);
-  		}
-  	}
+    for(int h=max(0, i-2); h<=min(n-1, i+2); ++h) {
+      for(int k=max(0, j-2); k<=min(m-1, j+2); ++k) {
+        int val = 3 - max(abs(i-h), abs(j-k));
+        ar[h][k] = max(ar[h][k], val);
+      }
+    }
   }
 
 
@@ -35,3 +35,4 @@ int32_t main() {
   else cout << "100%";
   return 0;
 }
+

@@ -17,11 +17,11 @@ int32_t main() {
   for(int i=0; i<m; ++i) {
     a[i] = tolower(a[i]), b[i] = tolower(b[i]);
     if(t.find(a[i%n]) != string::npos or t.find(b[i]) != string::npos) {
-    	res += 'w';
-    	w++, r++; mxr = max(mxr, r);
+      res += 'w';
+      w++, r++; mxr = max(mxr, r);
     }else {
-    	res += '$';
-    	r = 0;
+      res += '$';
+      r = 0;
     }
   }
 

@@ -27,20 +27,20 @@ void runcase() {
   map<int, int> mp;
   int n; cin >> n;
   for(int i=0; i<n; ++i) {
-  	int x, y; cin >> x >> y;
-  	mp[-x] += y;
+    int x, y; cin >> x >> y;
+    mp[-x] += y;
   }
   cin >> n;
   for(int i=0; i<n; ++i) {
-  	int x, y; cin >> x >> y;
-  	mp[-x] += y;
+    int x, y; cin >> x >> y;
+    mp[-x] += y;
   }
 
   bool ok = false;
   for(auto [a, b] : mp) {
-  	if(b == 0) continue ;
-  	ok = true;
-  	cout << -a << ' ' << b << ln;
+    if(b == 0) continue ;
+    ok = true;
+    cout << -a << ' ' << b << ln;
   }
 
   if(!ok) cout << 0;

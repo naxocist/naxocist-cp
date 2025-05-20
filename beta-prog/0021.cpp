@@ -24,8 +24,8 @@ void solve() {
   string s; getline(cin,s);int n=s.size();
   string v="aeiou";
   for(int i=0;i<n;++i){
-  	cout<<s[i];
-  	if(i<n-2 and v.find(s[i])!=string::npos and s[i+1]=='p' and s[i] == s[i+2])i+=2;
+    cout<<s[i];
+    if(i<n-2 and v.find(s[i])!=string::npos and s[i+1]=='p' and s[i] == s[i+2])i+=2;
   }
 }
 

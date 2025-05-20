@@ -27,24 +27,24 @@ void runcase() {
   int n, t; cin >> n >> t;
   vector<int> v(n); for(auto &x : v) cin >> x;
   while(t--) {
-  	int c, pos, h; cin >> c;
-  	if(c != 4) cin >> pos;
-  	cin >> h;
+    int c, pos, h; cin >> c;
+    if(c != 4) cin >> pos;
+    cin >> h;
 
-  	if(h < 1) continue ; 
-  	pos --;
+    if(h < 1) continue ; 
+    pos --;
 
-  	if(c == 1) v[pos] += v[pos] < h;
-  	else if(c == 2) v[pos] -= v[pos] >= h;
-  	else if(c == 3) {
-  		for(int j=max(0, pos-1); j<=pos+1 and j<n; ++j){
-  			for(int i=h+1; i>=max(1,h-1); --i){
-  					if(v[j] >= i) v[j]--;
-  			}
-  		}
-  	}else for(auto &x : v) x -= x >= h;
+    if(c == 1) v[pos] += v[pos] < h;
+    else if(c == 2) v[pos] -= v[pos] >= h;
+    else if(c == 3) {
+      for(int j=max(0, pos-1); j<=pos+1 and j<n; ++j){
+        for(int i=h+1; i>=max(1,h-1); --i){
+            if(v[j] >= i) v[j]--;
+        }
+      }
+    }else for(auto &x : v) x -= x >= h;
 
-  	for(auto x : v) cout << x << ' '; cout << ln;
+    for(auto x : v) cout << x << ' '; cout << ln;
   }
   return ;
 }
@@ -56,3 +56,4 @@ int32_t main() {
   while(TC--) runcase();
   return 0;
 }
+

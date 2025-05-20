@@ -16,7 +16,7 @@ int32_t main() {
     if(vis[i]) continue ;
     int u = i, cnt = 0;
     do {
-    	u = v[u]; cnt ++; vis[u] = 1;
+      u = v[u]; cnt ++; vis[u] = 1;
     } while(u != i);
     mx = max(mx, cnt);
   }

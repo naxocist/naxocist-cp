@@ -24,7 +24,7 @@ void solve() {
   int n; cin >> n;
   set<string> s;
   while(n--){
-  	string t;cin>>t;s.insert(t);
+    string t;cin>>t;s.insert(t);
   }
   for(auto x:s)cout<<x<<'\n';
 }

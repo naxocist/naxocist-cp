@@ -15,16 +15,16 @@ int32_t main() {
 
   int q; cin >> q;
   while(q--) {
-  	int x, y; cin >> x >> y >> c;
-  	if(x == 1) a[y] = c;
-  	else b[y] = c;
+    int x, y; cin >> x >> y >> c;
+    if(x == 1) a[y] = c;
+    else b[y] = c;
   }
 
   unordered_map<char, char> um = {
-  	{'A', 'T'},
-  	{'T', 'A'},
-  	{'G', 'C'},
-  	{'C', 'G'}
+    {'A', 'T'},
+    {'T', 'A'},
+    {'G', 'C'},
+    {'C', 'G'}
   };
 
   int res = 0;

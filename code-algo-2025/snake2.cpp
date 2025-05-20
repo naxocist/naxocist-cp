@@ -27,27 +27,27 @@ void solve() {
   for(int i=1;i<=n;++i)cin>>ar[i];
 
   for(int i=n;i>=1;--i){
-  	for(int j=0;j<=n;++j){
-  		mx[i][j]=-INF,mn[i][j]=INF;
-  		if(!j)continue;
-  		for(int h=l;h<=r;++h){
-  			if(i+h>n){
-  				mx[i][j]=max(mx[i][j],ar[i]);
-  				mn[i][j]=min(mn[i][j],ar[i]);
-  				continue ;
-  			}
+    for(int j=0;j<=n;++j){
+      mx[i][j]=-INF,mn[i][j]=INF;
+      if(!j)continue;
+      for(int h=l;h<=r;++h){
+        if(i+h>n){
+          mx[i][j]=max(mx[i][j],ar[i]);
+          mn[i][j]=min(mn[i][j],ar[i]);
+          continue ;
+        }
 
-  			if(mx[i+h][j-1]!=-INF) mx[i][j]=max(mx[i][j],mx[i+h][j-1]+ar[i]);
-  			if(mn[i+h][j-1]!=INF) mn[i][j]=min(mn[i][j],mn[i+h][j-1]+ar[i]);
-  		}
-  	}
+        if(mx[i+h][j-1]!=-INF) mx[i][j]=max(mx[i][j],mx[i+h][j-1]+ar[i]);
+        if(mn[i+h][j-1]!=INF) mn[i][j]=min(mn[i][j],mn[i+h][j-1]+ar[i]);
+      }
+    }
   }
 
   while(q--){
-  	int a,b,c,d;cin>>a>>b>>c>>d;
-  	int x=mx[a][b],y=mn[c][d];
-  	if(x==-INF)x=0;if(y==INF)y=0;
-  	cout << x+y << '\n';
+    int a,b,c,d;cin>>a>>b>>c>>d;
+    int x=mx[a][b],y=mn[c][d];
+    if(x==-INF)x=0;if(y==INF)y=0;
+    cout << x+y << '\n';
   }
 }
 
@@ -58,3 +58,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

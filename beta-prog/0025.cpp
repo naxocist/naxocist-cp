@@ -24,21 +24,21 @@ void solve() {
   string a,b;char c;cin>>a>>c>>b;
   int na=a.size(),nb=b.size();
   if(c=='*'){
-  	cout<<1;int k=na+nb-2;while(k--)cout<<0;
-  	return ;
+    cout<<1;int k=na+nb-2;while(k--)cout<<0;
+    return ;
   }
   reverse(all(a));reverse(all(b));
   string r;
   for(int i=0;i<max(na,nb);++i){
-  	if(i<min(na,nb))r+=a[i]+b[i]-'0';
-  	else r+=na>nb?a[i]:b[i];
+    if(i<min(na,nb))r+=a[i]+b[i]-'0';
+    else r+=na>nb?a[i]:b[i];
   }
   reverse(all(r));
   cout<<r;
 
   // if(na==nb){
-  // 	cout<<2;int k=na-1;while(k--)cout<<0; 
-  // 	return ;
+  //   cout<<2;int k=na-1;while(k--)cout<<0; 
+  //   return ;
   // }
   // if(na<nb)swap(a,b),swap(na,nb);
   // cout<<1;int k=na-nb-1;while(k--)cout<<0;cout<<1;k=nb-1;while(k--)cout<<0;
@@ -51,3 +51,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

@@ -26,8 +26,8 @@ void solve() {
   while(m--){int x;cin>>x;no[x]=1;}
   vector<int> v(n);iota(all(v),1);
   do{
-  	if(no[v[0]])continue;
-  	for(auto x:v)cout<<x<<' ';cout<<'\n';
+    if(no[v[0]])continue;
+    for(auto x:v)cout<<x<<' ';cout<<'\n';
   }while(next_permutation(all(v)));
 }
 

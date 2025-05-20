@@ -24,7 +24,7 @@ void solve() {
   int n,m,l,k,c; cin >> n >> m >> l >> k >> c;
   int s=0;
   for(int i=0;i<n;++i) for(int j=0;j<m;++j){
-  	int x; cin >> x; s += x;
+    int x; cin >> x; s += x;
   }
 
   cout << (s+c-1)/c+l*k;

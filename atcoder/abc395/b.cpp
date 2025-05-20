@@ -26,11 +26,11 @@ void solve() {
   int n; cin >> n;
 
   for(int i=0; i<n; ++i) {
-  	for(int j=0; j<n; ++j) {
-  		int mn = min({i, j, n-i-1, n-j-1});
-  		cout << ".#"[mn&1^1];
-  	}
-  	cout << ln;
+    for(int j=0; j<n; ++j) {
+      int mn = min({i, j, n-i-1, n-j-1});
+      cout << ".#"[mn&1^1];
+    }
+    cout << ln;
   }
   return ;
 }
@@ -42,3 +42,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

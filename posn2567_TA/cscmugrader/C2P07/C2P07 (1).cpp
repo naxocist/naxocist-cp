@@ -28,11 +28,11 @@ void runcase() {
   int n; cin >> n;
   map<ll, pii> mp;
   for(int i=0; i<n; ++i) {
-  	int x, y; cin >> x >> y;
-  	mp[(1ll*x*x+1ll*y*y)*((ll)1e5+1)+i] = pii(x, y);
+    int x, y; cin >> x >> y;
+    mp[(1ll*x*x+1ll*y*y)*((ll)1e5+1)+i] = pii(x, y);
   }
   for(auto [x, y] : mp) {
-  	cout << "(" << y.first << ", " << y.second << ")\n";
+    cout << "(" << y.first << ", " << y.second << ")\n";
   }
   return ;
 }

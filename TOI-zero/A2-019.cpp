@@ -15,8 +15,8 @@ int32_t main() {
   int u = 0, mxu = 0; bool ok = 0, hb = 0;
   for(int i=0; i<n; ++i) {
     if(ok) {
-    	if(s[i] == 'u') mxu = max(mxu, ++u);
-    	else ok = 0;
+      if(s[i] == 'u') mxu = max(mxu, ++u);
+      else ok = 0;
     }
 
     if(i < n-2 and s.substr(i, 3) == b) ok = 1, u = 0;
@@ -29,9 +29,9 @@ int32_t main() {
   if(hb) {
     bool ok = 0;
     for(char c : z) {
-    	if(ok) cout << 'U';
-    	else cout << c;
-    	if(tolower(c) == 'b') ok = 1;
+      if(ok) cout << 'U';
+      else cout << c;
+      if(tolower(c) == 'b') ok = 1;
     }
   }else {
     for(int i=0; i<n; ++i) cout << char(toupper(b[i%3]));

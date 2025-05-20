@@ -25,12 +25,12 @@ void solve() {
   priority_queue<int> pq;
   int z=0;
   while(n--){
-  	int x;cin>>x;if(x)pq.emplace(-x);
-  	z+=x==0;
+    int x;cin>>x;if(x)pq.emplace(-x);
+    z+=x==0;
   }
   while(pq.size()){
-  	cout<<-pq.top();pq.pop();
-  	while(z-->0)cout<<0;
+    cout<<-pq.top();pq.pop();
+    while(z-->0)cout<<0;
   }
 }
 

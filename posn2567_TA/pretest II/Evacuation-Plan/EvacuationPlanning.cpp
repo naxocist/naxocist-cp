@@ -22,21 +22,22 @@ int main() {
 
   int d=0;
   for(int j=1; j<=w; ++j) {
-  	if(d >= m) {
-  		dp[j] = dp[j-1];
-  		continue;
-  	}
-  	int idx = vec[d].second;
-  	if(--w2[idx] == 0) d++;
-  	dp[j] = dp[j-1]+rat[idx];
+    if(d >= m) {
+      dp[j] = dp[j-1];
+      continue;
+    }
+    int idx = vec[d].second;
+    if(--w2[idx] == 0) d++;
+    dp[j] = dp[j-1]+rat[idx];
   }
 
   for(int i=0; i<n; ++i) {
-  	for(int j=w; j>=0; --j) {
-  		if(j-w1[i]>=0) dp[j]=max(dp[j], dp[j-w1[i]] + v1[i]);
-  	}
+    for(int j=w; j>=0; --j) {
+      if(j-w1[i]>=0) dp[j]=max(dp[j], dp[j-w1[i]] + v1[i]);
+    }
   }
 
   cout << dp[w] << ".00";
   return 0;
 }
+

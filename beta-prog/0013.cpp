@@ -25,12 +25,12 @@ void solve() {
   vector<int> v(9);for(auto &x:v)cin>>x,s+=x;
   s-=100;
   for(int i=0;i<9;++i){
-  	for(int j=i+1;j<9;++j){
-  		if(v[i]+v[j]==s){
-  			for(int k=0;k<9;++k)if(k!=i and k!=j)cout<<v[k]<<'\n';
-  			return ;
-  		}
-  	}
+    for(int j=i+1;j<9;++j){
+      if(v[i]+v[j]==s){
+        for(int k=0;k<9;++k)if(k!=i and k!=j)cout<<v[k]<<'\n';
+        return ;
+      }
+    }
   }
 }
 
@@ -41,3 +41,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

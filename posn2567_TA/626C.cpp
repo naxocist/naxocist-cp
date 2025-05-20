@@ -25,9 +25,9 @@ void runcase() {
   int n, m; cin >> n >> m;
   int l = -1, r = 2e9;
   while(l + 1 < r) {
-  	int md = l + (r-l)/2;
-  	if(md/2 >= n and md/3 >= m and md/2+md/3-md/6 >= n+m) r = md;
-  	else l = md;
+    int md = l + (r-l)/2;
+    if(md/2 >= n and md/3 >= m and md/2+md/3-md/6 >= n+m) r = md;
+    else l = md;
   }
 
   cout << r;

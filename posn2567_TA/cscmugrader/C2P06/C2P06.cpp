@@ -27,19 +27,19 @@ void runcase() {
   int n, m; cin >> n >> m;
   priority_queue<int> pq, pq2;
   for(int i=0; i<n; ++i) {
-  	int x; cin >> x; pq.emplace(x);
+    int x; cin >> x; pq.emplace(x);
   }
   
   for(int i=0; i<m; ++i) {
-  	int x; cin >> x; pq2.emplace(x);
+    int x; cin >> x; pq2.emplace(x);
   }
 
   int ans = 0;
   while(!pq2.empty()) {
-  	int x = pq2.top(); 
-  	if(pq.empty()) break ;
-  	if(x > pq.top()) ans += x, pq.pop(), pq2.pop();
-  	else pq.pop();
+    int x = pq2.top(); 
+    if(pq.empty()) break ;
+    if(x > pq.top()) ans += x, pq.pop(), pq2.pop();
+    else pq.pop();
   }
   cout << ans;
   return ;

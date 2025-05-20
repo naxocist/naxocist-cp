@@ -27,11 +27,11 @@ map<int, int> npass;
 void runcase() {
   int c, n; cin >> c >> n;
   for(int i=0; i<n; ++i) {
-  	int id, d, tm, pass; cin >> id >> d >> tm >> pass;
-  	if(npass.find(id) != npass.end()) npass[id] = 0;
+    int id, d, tm, pass; cin >> id >> d >> tm >> pass;
+    if(npass.find(id) != npass.end()) npass[id] = 0;
 
-  	if(pass) npass[id] ++;
-  	else ch[id][d] += 20*60;
+    if(pass) npass[id] ++;
+    else ch[id][d] += 20*60;
   }
 
   for(auto [team, np] : npass) {

@@ -17,9 +17,9 @@ int32_t main() {
   for(int u=1; u<=n; ++u){
     int a, l, b, r; cin >> a >> l >> b >> r; 
     if(a and b) {
-    	res += abs(l - r);
-    	w[u] = 2*max(l, r);
-    	continue ;
+      res += abs(l - r);
+      w[u] = 2*max(l, r);
+      continue ;
     } 
 
     if(a) wl[u] = l;

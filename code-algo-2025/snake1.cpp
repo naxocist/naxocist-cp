@@ -24,9 +24,9 @@ void solve() {
   int n; cin >> n;
   vector<int> dp(n+6);
   for(int i=6;i<n+6;++i){
-  	if(i&1^1)dp[i]=min({dp[i-1],dp[i-3],dp[i-5]});
-  	else dp[i]=min({dp[i-2],dp[i-4],dp[i-6]});
-  	dp[i]++;
+    if(i&1^1)dp[i]=min({dp[i-1],dp[i-3],dp[i-5]});
+    else dp[i]=min({dp[i-2],dp[i-4],dp[i-6]});
+    dp[i]++;
   }
 
   cout<<dp[n+5];

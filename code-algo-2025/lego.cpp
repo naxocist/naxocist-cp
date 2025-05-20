@@ -33,9 +33,9 @@ void solve() {
 
   ll res=1;
   for(int i=0;i<min(n,m);++i){
-  	res*=1ll*(n-i)*(m-i),res%=mod;
-  	res*=binpow(binpow(i+1,2), mod-2); res%=mod;
-  	cout<<res<<ln;
+    res*=1ll*(n-i)*(m-i),res%=mod;
+    res*=binpow(binpow(i+1,2), mod-2); res%=mod;
+    cout<<res<<ln;
   }
 }
 

@@ -24,8 +24,8 @@ void solve() {
   int k=10,r=0;
   bool a[42]={};
   while(k--){
-  	int x;cin>>x;x%=42;
-  	r+=!a[x];a[x]=1;
+    int x;cin>>x;x%=42;
+    r+=!a[x];a[x]=1;
   }
   cout<<r;
 }

@@ -14,8 +14,8 @@ int32_t main() {
 
   int mx = 0;
   for(int i=0; i<n; ++i) {
-  	r[i] = max(0, mx - h[i] + 1);
-  	mx = max(mx, h[i]);
+    r[i] = max(0, mx - h[i] + 1);
+    mx = max(mx, h[i]);
   } 
   
   while(l--) {

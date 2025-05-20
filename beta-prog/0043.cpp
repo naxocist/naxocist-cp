@@ -23,10 +23,10 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 void solve() {
   // cout<<"{";
   // for(int n=1;n<=300;++n){
-  // 	unsigned ll s=0;
-  // 	for(int i=1;i<=n;++i) for(int j=1;j<=n+i;++j) for(int k=1;k<=n+i+j;++k) 
-  // 		s+=(1ull*i*j*k)%(i+j+k);
-  // 	cout<<s<<",";
+  //   unsigned ll s=0;
+  //   for(int i=1;i<=n;++i) for(int j=1;j<=n+i;++j) for(int k=1;k<=n+i+j;++k) 
+  //     s+=(1ull*i*j*k)%(i+j+k);
+  //   cout<<s<<",";
   // }
   // cout<<"}";
 
@@ -42,3 +42,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

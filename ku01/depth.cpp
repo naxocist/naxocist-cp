@@ -27,9 +27,9 @@ int32_t main() {
     int x; cin >> x;
     int l = -1, r = n + 1;
     while(l + 1 < r) {
-    	int m = l + (r-l)/2;
-    	if(mx[m] >= x) l = m;
-    	else r = m;
+      int m = l + (r-l)/2;
+      if(mx[m] >= x) l = m;
+      else r = m;
     }
 
     cout << l << ln;

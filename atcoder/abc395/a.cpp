@@ -26,11 +26,11 @@ void solve() {
   int n; cin >> n;
   int p = -1;
   for(int i=0; i<n; ++i) {
-  	int x; cin >> x;
-  	if(x <= p) {
-  		cout << "No" << ln; return ;
-  	}
-  	p = x;
+    int x; cin >> x;
+    if(x <= p) {
+      cout << "No" << ln; return ;
+    }
+    p = x;
   }
 
   cout << "Yes" << ln;
@@ -44,3 +44,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

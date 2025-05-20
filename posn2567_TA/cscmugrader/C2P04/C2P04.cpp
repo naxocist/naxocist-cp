@@ -29,27 +29,27 @@ using pi = pair<int, int>;
 void runcase() {
   int n; cin >> n;
   for(int i=0; i<n; ++i) {
-  	for(int j=0; j<n; ++j) cin >> ar[i][j];
+    for(int j=0; j<n; ++j) cin >> ar[i][j];
   }
 
   int res = 0;
   for(int i=0; i<n; ++i) {
-  	for(int j=0; j<n; ++j) {
-  		if(ar[i][j]) {
-  			res ++;
-  			queue<pi> q; q.emplace(i, j); 
-  			while(q.size()) {
-  				auto [x, y] = q.front(); q.pop();
-  				ar[x][y] = 0;
-  				for(int nx=x-1; nx<=x+1; nx++) {
-  					for(int ny=y-1; ny<=y+1; ny++) {
-  						if(nx < 0 or nx >= n or ny < 0 or ny >= n or ar[nx][ny] == 0) continue ;
-  						q.emplace(nx, ny); 
-  					}
-  				}
-  			}
-  		}
-  	}
+    for(int j=0; j<n; ++j) {
+      if(ar[i][j]) {
+        res ++;
+        queue<pi> q; q.emplace(i, j); 
+        while(q.size()) {
+          auto [x, y] = q.front(); q.pop();
+          ar[x][y] = 0;
+          for(int nx=x-1; nx<=x+1; nx++) {
+            for(int ny=y-1; ny<=y+1; ny++) {
+              if(nx < 0 or nx >= n or ny < 0 or ny >= n or ar[nx][ny] == 0) continue ;
+              q.emplace(nx, ny); 
+            }
+          }
+        }
+      }
+    }
   }
 
   cout << res;
@@ -63,3 +63,4 @@ int32_t main() {
   while(TC--) runcase();
   return 0;
 }
+

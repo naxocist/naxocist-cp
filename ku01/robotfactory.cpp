@@ -11,14 +11,14 @@ int f(int h1, int h2, int b1, int b2) {
   int mx = 0;
   int f1 = min(h1, b1);
   if(f1) {
-  	int c = max(f(h1-f1, h2, b1-f1, b2), f(h2, h1-f1, b2, b1-f1));
-  	mx = min(x, f1) + c;
+    int c = max(f(h1-f1, h2, b1-f1, b2), f(h2, h1-f1, b2, b1-f1));
+    mx = min(x, f1) + c;
   }
 
   int d1 = min(h1, b2);
   if(d1) {
-  	int c = max(f(h1-d1, h2, b1, b2-d1), f(h2, h1-d1, b2-d1, b1));
-  	mx = max(mx, min(y, d1) + c);
+    int c = max(f(h1-d1, h2, b1, b2-d1), f(h2, h1-d1, b2-d1, b1));
+    mx = max(mx, min(y, d1) + c);
   }
 
   return mx;

@@ -29,28 +29,28 @@ bool nw[N];
 void f(int i) {
   if(i == n + 1) {
 
-  	vector<int> tar(n + 1);
-  	int base = 0;
-  	for(int i=1, j; i<=n;) {
-  		for(j=i+1; !nw[j] and j <= n+1; ++j);
-  		int sz = j - i;
-  		for(int k=1; k<=sz; ++k) tar[revh[sz-k+1 + base]] = k + base;
-  		base += sz;
-  		i = j;
-  	}
+    vector<int> tar(n + 1);
+    int base = 0;
+    for(int i=1, j; i<=n;) {
+      for(j=i+1; !nw[j] and j <= n+1; ++j);
+      int sz = j - i;
+      for(int k=1; k<=sz; ++k) tar[revh[sz-k+1 + base]] = k + base;
+      base += sz;
+      i = j;
+    }
 
-  	// pa(pos, n);
+    // pa(pos, n);
 
-  	if(tar == revh) return ;
+    if(tar == revh) return ;
 
-  	int mv = 0;
-  	for(int i=1; i<=n; ++i) {
+    int mv = 0;
+    for(int i=1; i<=n; ++i) {
       for(int j=i+1; j<=n; ++j) {
-  			mv += tar[i] > tar[j];
+        mv += tar[i] > tar[j];
       }
     }
-  	res = min(res, mv);
-  	return ;
+    res = min(res, mv);
+    return ;
   }
 
   nw[i] = true;
@@ -76,3 +76,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

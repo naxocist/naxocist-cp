@@ -17,33 +17,33 @@ void runcase() {
 
   vector<pii> edge, edge2;
   while(z--) {
-  	int u, v; cin >> u >> v; g[u].pb(v), edge.pb(u, v);
+    int u, v; cin >> u >> v; g[u].pb(v), edge.pb(u, v);
   }
 
   for(int i=0; i<t; ++i) {
-  	int u, v; cin >> u >> v; edge2.pb(u, v);
+    int u, v; cin >> u >> v; edge2.pb(u, v);
   }
 
   int l = -1, r = t + 1;
   while(l + 1 < r) {
-  	int m = l + (r-l)/2;
-  	for(int i=0; i<n; ++i) adj[i].clear();
-  	for(int i=0; i<m; ++i) {
-  		auto [u, v] = edge2[i];
-  		adj[u].pb(v);
-  	}
+    int m = l + (r-l)/2;
+    for(int i=0; i<n; ++i) adj[i].clear();
+    for(int i=0; i<m; ++i) {
+      auto [u, v] = edge2[i];
+      adj[u].pb(v);
+    }
 
-  	for(int i=0; i<n; ++i) in[i] = 0;
-  	for(auto [u, v] : edge) in[v] ++;
-  	for(int i=0; i<m; ++i) {
-  		auto [u, v] = edge2[i];
-  		in[v] ++;
-  	}
+    for(int i=0; i<n; ++i) in[i] = 0;
+    for(auto [u, v] : edge) in[v] ++;
+    for(int i=0; i<m; ++i) {
+      auto [u, v] = edge2[i];
+      in[v] ++;
+    }
 
-  	int c = 0;
-  	for(int i=0; i<n; ++i) if(in[i] == 0) c ++;
-  	if(c - 1 <= d) r = m; 
-  	else l = m;
+    int c = 0;
+    for(int i=0; i<n; ++i) if(in[i] == 0) c ++;
+    if(c - 1 <= d) r = m; 
+    else l = m;
   }
 
   if(r == t + 1) r = -1;
@@ -58,3 +58,4 @@ int32_t main() {
   while(TC--) runcase();
   return 0;
 }
+

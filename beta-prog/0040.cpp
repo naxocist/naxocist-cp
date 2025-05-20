@@ -23,8 +23,8 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 void solve() {
   int q;cin>>q;
   while(q--){
-  	string s;cin>>s;
-  	cout<<((s.back()-'0')%2||s=="2"?"T":"F")<<'\n';
+    string s;cin>>s;
+    cout<<((s.back()-'0')%2||s=="2"?"T":"F")<<'\n';
   }
 }
 

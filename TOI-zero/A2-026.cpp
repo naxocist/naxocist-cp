@@ -14,8 +14,8 @@ int32_t main() {
     string s; int x; cin >> s >> x;
     c += x > 15;
     if(x > mx) {
-    	t = s;
-    	mx = x;
+      t = s;
+      mx = x;
     }
   }
   cout << c << ln << t << ' ' << mx;

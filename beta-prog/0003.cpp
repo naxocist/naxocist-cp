@@ -25,7 +25,7 @@ void solve() {
   int a[n][m];
   for(int i=0;i<n;++i)for(int j=0;j<m;++j)cin>>a[i][j];
   for(int i=0;i<n;++i)for(int j=0;j<m;++j){
-  	int x; cin >> x; ar[i][j] += x;
+    int x; cin >> x; ar[i][j] += x;
   }
   for(int i=0;i<n;++i)for(int j=0;j<m;++j)cout<<a[i][j]<<" \n"[j==m-1];
 }

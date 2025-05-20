@@ -53,7 +53,7 @@ void find_cycle() {
 int main() {
   cin >> n >> m;
   for(int i=0; i<m; ++i) {
-  	int u, v; cin >> u >> v; adj[u].push_back(v);
+    int u, v; cin >> u >> v; adj[u].push_back(v);
   }
 
   find_cycle();

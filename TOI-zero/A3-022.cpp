@@ -24,8 +24,8 @@ int32_t main() {
   for(auto [l, r] : v) {
     if(l <= cr) cr = max(r, cr); 
     else {
-    	if(cl != -1) merged.pb(cl, cr);
-    	cl = l, cr = r;
+      if(cl != -1) merged.pb(cl, cr);
+      cl = l, cr = r;
     }
   }
 

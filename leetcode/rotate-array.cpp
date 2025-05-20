@@ -27,12 +27,12 @@ void solve() {
 
   int l=0,r=n-1;
   while(l<r){
-  	for(int i=0;i<r-l;++i){
-  		swap(ar[l][l+i],ar[r-i][l]);
-  		swap(ar[r-i][l],ar[r][r-i]);
-  		swap(ar[r][r-i],ar[l+i][r]);
-  	}
-  	l++,r--;
+    for(int i=0;i<r-l;++i){
+      swap(ar[l][l+i],ar[r-i][l]);
+      swap(ar[r-i][l],ar[r][r-i]);
+      swap(ar[r][r-i],ar[l+i][r]);
+    }
+    l++,r--;
   }
 
   for(int i=0;i<n;++i)for(int j=0;j<n;++j)cout<<ar[i][j]<<" \n"[j==n-1];
@@ -45,3 +45,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

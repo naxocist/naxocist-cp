@@ -18,23 +18,24 @@ int32_t main() {
 
   for(int i=0; i<n; ++i) {
     for(int j=0; j<m; ++j) {
-    	if(ar[i][j] != -1) continue ;
-    	for(int a=i-1; a<=i+1; ++a) {
-    		for(int b=j-1; b<=j+1; ++b) {
-    			if(a < 0 or b < 0 or a >= n or b >= m or ar[a][b] == -1) continue ;
-    			ar[a][b] ++;
-    		}
-    	}
+      if(ar[i][j] != -1) continue ;
+      for(int a=i-1; a<=i+1; ++a) {
+        for(int b=j-1; b<=j+1; ++b) {
+          if(a < 0 or b < 0 or a >= n or b >= m or ar[a][b] == -1) continue ;
+          ar[a][b] ++;
+        }
+      }
     }
   }
 
   for(int i=0; i<n; ++i) {
     for(int j=0; j<m; ++j) {
-    	if(ar[i][j] == -1) cout << 'x';
-    	else cout << ar[i][j];
-    	cout << " ";
+      if(ar[i][j] == -1) cout << 'x';
+      else cout << ar[i][j];
+      cout << " ";
     }
     cout << ln;
   }
   return 0;
 }
+

@@ -26,12 +26,12 @@ void solve() {
   int d=n/2,w=n;
   if(n&1^1)c=1,n++,w=n-2;
   for(int i=0;i<n;++i){
-  	if(c and i==n/2)continue;
-  	for(int j=0;j<w;++j){
-  		if(abs(i-n/2)+abs(j-w/2)==d)cout<<"*";
-  		else cout<<"-";
-  	}
-  	cout<<"\n";
+    if(c and i==n/2)continue;
+    for(int j=0;j<w;++j){
+      if(abs(i-n/2)+abs(j-w/2)==d)cout<<"*";
+      else cout<<"-";
+    }
+    cout<<"\n";
   }
 }
 
@@ -42,3 +42,4 @@ int32_t main() {
   while(TC--) solve();
   return 0;
 }
+

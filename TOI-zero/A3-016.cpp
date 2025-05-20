@@ -28,15 +28,16 @@ int32_t main() {
   q.emplace(0);
   vector<bool> vis(n);
   while(q.size()) {
-  	int u = q.front(); q.pop();
-  	if(vis[u]) continue ;
-  	vis[u] = 1;
-  	res ++;
-  	for(auto [v, i] : adj[u]) {
-  		if(--req[i] == 0) q.emplace(v);
-  	}
+    int u = q.front(); q.pop();
+    if(vis[u]) continue ;
+    vis[u] = 1;
+    res ++;
+    for(auto [v, i] : adj[u]) {
+      if(--req[i] == 0) q.emplace(v);
+    }
   }
 
   cout << res;
   return 0;
 }
+

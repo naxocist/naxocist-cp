@@ -24,7 +24,7 @@ void solve() {
   int n; cin >> n;
   int mx=-INT_MAX,mn=INT_MAX;
   while(n--){
-  	int x;cin>>x;mx=max(mx,x);mn=min(mn,x);
+    int x;cin>>x;mx=max(mx,x);mn=min(mn,x);
   }
   cout << mn << '\n' << mx;
 }

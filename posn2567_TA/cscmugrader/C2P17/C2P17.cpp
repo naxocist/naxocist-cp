@@ -26,17 +26,17 @@ ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 void runcase() {
   int q, n; cin >> q >> n;
   while(q--) {
-  	vector<int> v(n); for(auto &x : v) cin >> x; reverse(all(v));
-  	int sz = 0, res = 0;
-  	while(sz < n-1) {
-  		int it = max_element(begin(v), begin(v)+n-sz) - begin(v);
-  		if(it == 0) res ++, reverse(begin(v), begin(v)+n-sz);
-  		else if(it == n-1-sz){ sz++; continue ; }
-  		else res ++, reverse(begin(v)+it, begin(v)+n-sz);
+    vector<int> v(n); for(auto &x : v) cin >> x; reverse(all(v));
+    int sz = 0, res = 0;
+    while(sz < n-1) {
+      int it = max_element(begin(v), begin(v)+n-sz) - begin(v);
+      if(it == 0) res ++, reverse(begin(v), begin(v)+n-sz);
+      else if(it == n-1-sz){ sz++; continue ; }
+      else res ++, reverse(begin(v)+it, begin(v)+n-sz);
 
-  		sz ++;
-  	}
-  	cout << res << ln;
+      sz ++;
+    }
+    cout << res << ln;
   }
   return ;
 }
@@ -48,3 +48,4 @@ int32_t main() {
   while(TC--) runcase();
   return 0;
 }
+

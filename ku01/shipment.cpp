@@ -18,11 +18,11 @@ int32_t main() {
 
    int res = INT_MAX;
    for(int i=0; i<=k; ++i) {
-   	if(i > n or k-i > n) continue ;
-   	int mx = 0;
-   	for(int j=0; j<i; ++j) mx = max(mx, a[j]+c[i-j-1]);
-   	for(int j=0; j<k-i; ++j) mx = max(mx, b[j]+d[k-i-j-1]);
-   	res = min(res, mx);
+     if(i > n or k-i > n) continue ;
+     int mx = 0;
+     for(int j=0; j<i; ++j) mx = max(mx, a[j]+c[i-j-1]);
+     for(int j=0; j<k-i; ++j) mx = max(mx, b[j]+d[k-i-j-1]);
+     res = min(res, mx);
    }
    cout << res;
   return 0;

@@ -26,20 +26,20 @@ void runcase() {
   using T = tuple<int, char, char>;
   vector<T> v;
   while(n--) {
-  	char a, b; cin >> a >> b;
-  	int t = 0;
-  	if(a == '2') t = 15;
-  	else if(isdigit(a)) t = a - '0';
-  	else if(a == 'T') t = 10;
-  	else if(a == 'J') t = 11;
-  	else if(a == 'Q') t = 12;
-  	else if(a == 'K') t = 13;
-  	else if(a == 'A') t = 14;
-  	v.pb(t, b, a);
+    char a, b; cin >> a >> b;
+    int t = 0;
+    if(a == '2') t = 15;
+    else if(isdigit(a)) t = a - '0';
+    else if(a == 'T') t = 10;
+    else if(a == 'J') t = 11;
+    else if(a == 'Q') t = 12;
+    else if(a == 'K') t = 13;
+    else if(a == 'A') t = 14;
+    v.pb(t, b, a);
   }
   sort(all(v));
   for(auto [_, b, a] : v) {
-  	cout << a << ' ' << b << ln;
+    cout << a << ' ' << b << ln;
   }
   return ;
 }

@@ -24,8 +24,8 @@ void solve() {
   string s; cin >> s;
   bool a,b;a=b=0;
   for(auto c:s){
-  	if(isupper(c))a=1;
-  	else b=1;
+    if(isupper(c))a=1;
+    else b=1;
   }
   if(a and b)cout<<"Mix";
   else if(a)cout<<"All Capital Letter";
