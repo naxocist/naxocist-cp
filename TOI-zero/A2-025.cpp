@@ -17,7 +17,14 @@ int32_t main() {
     int i, j; cin >> i >> j;
     for(int h=max(0, i-2); h<=min(n-1, i+2); ++h) {
       for(int k=max(0, j-2); k<=min(m-1, j+2); ++k) {
-        int val = 3 - max(abs(i-h), abs(j-k));
+        int layer = max(abs(i-h), abs(j-k));
+        // int danger = 0;
+        // if(layer == 0) danger = 100;
+        // else if(layer == 1) danger = 60;
+        // else danger = 20;
+        // ar[h][k] = max(ar[h][k], danger);
+        
+        int val = 3 - layer;
         ar[h][k] = max(ar[h][k], val);
       }
     }
@@ -28,6 +35,7 @@ int32_t main() {
   for(int i=0; i<n; ++i) for(int j=0; j<m; ++j) res += (ar[i][j] == 0);
 
   cout << res << ln;
+  // cout << ar[x][y] << '%';
   int t = ar[x][y];
   if(t == 0) cout << "0%";
   else if(t == 1) cout << "20%";
