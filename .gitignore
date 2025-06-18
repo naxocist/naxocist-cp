@@ -11,6 +11,7 @@ TOI-zero/TOI0-extension/
 
 gen
 testcases
+*.testcases
 
 # Ignore all tmp folders and common temporary files
 tmp/
