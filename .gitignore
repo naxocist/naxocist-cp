@@ -6,6 +6,7 @@ TOI-zero/TOI0-extension/
 *.exe
 *.txt
 *.pdf
+*.ast
 !posn2567_TA/pretest I/**/*.pdf
 !posn2567_TA/pretest II/**/*.pdf
 

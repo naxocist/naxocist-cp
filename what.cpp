@@ -1,15 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define ln '\n'
 const int N = 1e5 + 3;
-vector<int> adj[N];
 
 int main() {
-  int n, m; cin >> n >> m;
+  cin.tie(nullptr)->sync_with_stdio(false);
 
-  while(1) {
-    cout << "HI";
-  }
-  cout << n * m;
   return 0;
 }
