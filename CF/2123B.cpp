@@ -21,13 +21,28 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
+  int n, j, k; cin >> n >> j >> k; j--;
+
+  int mx = INT_MIN;
+  vector<int> v(n);
+  for(int i=0; i<n; ++i) {
+    cin >> v[i];
+    mx = max(mx, v[i]);
+  }
+
+  if(k == 1) {
+    if(v[j] == mx) cout << "yes";
+    else cout << "no";
+  }else {
+    cout << "yes";
+  }
+  cout << ln;
 }
 
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
   int TC = 1;
-  // cin >> TC; 
+  cin >> TC;
   while(TC--) solve();
   return 0;
 }
-

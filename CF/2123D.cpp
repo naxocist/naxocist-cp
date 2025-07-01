@@ -21,13 +21,20 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng);}
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); } 
 
 void solve() {
+  int n, k; cin >> n >> k;
+  string s; cin >> s;
+
+  int o = 0;
+  for(char c : s) o += c == '1';
+  if(n < 2*k or k >= o) cout << "alice\n";
+  else cout << "bob\n";
+
 }
 
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
   int TC = 1;
-  // cin >> TC; 
+  cin >> TC;
   while(TC--) solve();
   return 0;
 }
-
