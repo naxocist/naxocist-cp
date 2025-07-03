@@ -51,11 +51,11 @@ void find_cycle() {
 }
 
 int main() {
-  cin >> n >> m;
-  for(int i=0; i<m; ++i) {
-    int u, v; cin >> u >> v; adj[u].push_back(v);
-  }
+	cin >> n >> m;
+	for(int i=0; i<m; ++i) {
+		int u, v; cin >> u >> v; adj[u].push_back(v);
+	}
 
-  find_cycle();
-  return 0;
+	find_cycle();
+	return 0;
 }
