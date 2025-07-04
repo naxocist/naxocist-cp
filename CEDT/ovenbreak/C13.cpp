@@ -20,20 +20,20 @@ int32_t main() {
   bool aa = 1; int k = 0;
   for(int i=0; i<n; ++i) {
     int x = aa ? a[i] : b[i];
-    if(x <= 0) continue ;
-    tt += x; tt %= mod;
     if(aa) u[i] = 1;
     else v[i] = 1;
+    if(x <= 0) continue ;
+    tt += x; tt %= mod;
     if(++k == t) aa ^= 1, k = 0;
   }
 
   aa = 0, k = 0;
   for(int i=0; i<n; ++i) {
     int x = aa ? a[i] : b[i];
-    if(x <= 0) continue ;
-    ee *= x; ee %= mod;
     if(aa) u[i] = 1;
     else v[i] = 1;
+    if(x <= 0) continue ;
+    ee *= x; ee %= mod;
     if(++k == e) aa ^= 1, k = 0;
   }
 
