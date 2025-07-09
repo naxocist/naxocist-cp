@@ -24,8 +24,9 @@ int main() {
       int nl = j + l[i];
       int ns = dp[j].sad + s[i];
       int nh = dp[j].happy + h[i];
-      if(j + l[i] > lim) continue ;
-      if(dp[nl].sad == -1 or min(dp[nl].sad,dp[nl].happy) < min(ns, nh)) {
+      if(nl > lim or dp[j].sad == -1) continue ;
+
+      if(min(dp[nl].sad,dp[nl].happy) < min(ns, nh)) {
         dp[nl].sad = ns, dp[nl].happy = nh;
       }
     }
