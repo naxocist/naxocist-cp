@@ -16,15 +16,10 @@ int32_t main() {
 
   double c = re - rp;
   double C = sqrt((xe-xm)*(xe-xm) + (ye-ym)*(ye-ym));
-
   c /= C;
-
-  double a = c * abs(xm-xe);
-  double b = c * abs(ym-ye);
-
-  double x = xm < xe ? xe - a : xe + a;
-  double y = ym < ye ? ye - b : ye + b;
-
+  double a = c * (xm-xe);
+  double b = c * (ym-ye);
+  double x = xe + a, y = ye + b;
   cout << round(x) << ' ' << round(y);
   return 0;
 }
