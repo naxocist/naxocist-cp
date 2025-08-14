@@ -11,23 +11,20 @@ int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
   int n; cin >> n;
 
-  for(int i=0; i<n; ++i) {
-    for(int j=0; j<n; ++j) {
-      int mn = min({i,j,n-i-1,n-j-1});
-      if(mn&1) cout << " ";
-      else cout << "5";
+  int t = 2;
+
+  bool first = 1;
+  while(n != 1) {
+    int cnt = 0;
+    while(n % t == 0) cnt ++, n/=t;
+
+    while(cnt--) {
+      if(!first) cout << "*";
+      cout << t;
+      first = 0;
     }
-    cout << ln;
+    t ++;
   }
-
-
-  for(int i=0; i<n; ++i) {
-    int x; cin >> x;
-  }
-
-  string s = "Hello WOrld";
-  cout << s.substr(3);
-
 
   return 0;
 }

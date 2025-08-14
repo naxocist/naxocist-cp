@@ -10,25 +10,18 @@ using namespace std;
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
   int n; cin >> n;
+  for(int i=1; i<=n; ++i) {
+    for(int j=1; j<=n; ++j) {
+      if(n-i+1 == j or i == n) cout << "*";
+      else cout << ".";
+    }
 
-  for(int i=0; i<n; ++i) {
-    for(int j=0; j<n; ++j) {
-      int mn = min({i,j,n-i-1,n-j-1});
-      if(mn&1) cout << " ";
-      else cout << "5";
+    for(int j=1; j<=i-1; j++) {
+      if(i-1 == j or i == n) cout << "*";
+      else cout << ".";
     }
     cout << ln;
   }
-
-
-  for(int i=0; i<n; ++i) {
-    int x; cin >> x;
-  }
-
-  string s = "Hello WOrld";
-  cout << s.substr(3);
-
-
   return 0;
 }
 

@@ -14,7 +14,6 @@ int32_t main() {
   y -= 543;
   int n = 31;
 
-
   // 4 6 9 11
   if(m == 4 or m == 6 or m == 9 or m == 11) n = 30;
   else if(m == 2) {
