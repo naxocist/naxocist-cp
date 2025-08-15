@@ -8,27 +8,6 @@ using namespace std;
 #define pb emplace_back
 
 int32_t main() {
-  cin.tie(nullptr)->sync_with_stdio(0);
-  int n; cin >> n;
 
-  for(int i=0; i<n; ++i) {
-    for(int j=0; j<n; ++j) {
-      int mn = min({i,j,n-i-1,n-j-1});
-      if(mn&1) cout << " ";
-      else cout << "5";
-    }
-    cout << ln;
-  }
-
-
-  for(int i=0; i<n; ++i) {
-    int x; cin >> x;
-  }
-
-  string s = "Hello WOrld";
-  cout << s.substr(3);
-
-
-  return 0;
 }
 
