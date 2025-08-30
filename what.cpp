@@ -16,5 +16,6 @@ int up[N][LG];
 
 int32_t main() {
   int n, m; cin >> n >> m;
+
 }
 
