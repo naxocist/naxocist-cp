@@ -7,20 +7,17 @@ using namespace std;
 #define all(x) begin(x), end(x)
 #define pb emplace_back
 
-
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
-  int n; cin >> n;
-  vector<int> v(n);
-  for(auto &x : v) cin >> x;
+  string a;
+  getline(cin, a);
+  multiset<char> s, z;
+  for(char c : a) if(isalpha(c)) s.insert(tolower(c));
+  getline(cin, a);
+  for(char c : a) if(isalpha(c)) z.insert(tolower(c));
 
-  for(int i=0; i<n; ++i) {
-    for(int j=0; j<n-i-1; j++) {
-      if(v[j] < v[j+1]) swap(v[j], v[j+1]);
-    }
-  }
-
-  for(auto x : v) cout << x << ' ';
+  if(s == z) cout << "YES";
+  else cout << "NO";
   return 0;
 }
 

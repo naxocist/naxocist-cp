@@ -7,20 +7,20 @@ using namespace std;
 #define all(x) begin(x), end(x)
 #define pb emplace_back
 
-
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
-  int n; cin >> n;
-  vector<int> v(n);
-  for(auto &x : v) cin >> x;
+  int res = 1;
+  int x;
 
-  for(int i=0; i<n; ++i) {
-    for(int j=0; j<n-i-1; j++) {
-      if(v[j] < v[j+1]) swap(v[j], v[j+1]);
-    }
+  unordered_set<int> s;
+  while(cin >> x) {
+    if(s.find(x) != s.end()) break ;
+    res ++;
+    s.insert(x);
   }
 
-  for(auto x : v) cout << x << ' ';
+  cout << res;
+
   return 0;
 }
 

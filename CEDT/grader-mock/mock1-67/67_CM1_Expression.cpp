@@ -7,20 +7,15 @@ using namespace std;
 #define all(x) begin(x), end(x)
 #define pb emplace_back
 
-
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
-  int n; cin >> n;
-  vector<int> v(n);
-  for(auto &x : v) cin >> x;
+  double x; cin >> x;
+  double c = cos(x*M_PI/180), s = sin(x*M_PI/180);
+  double a = sqrt(x*x + c*c);
+  double b = s + c*c*c/(x*x + 1);
 
-  for(int i=0; i<n; ++i) {
-    for(int j=0; j<n-i-1; j++) {
-      if(v[j] < v[j+1]) swap(v[j], v[j+1]);
-    }
-  }
-
-  for(auto x : v) cout << x << ' ';
+  a /= b;
+  cout << fixed << setprecision(1) << a;
   return 0;
 }
 
