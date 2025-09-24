@@ -9,8 +9,16 @@ using namespace std;
 
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
-  int x; cin >> x; cout << x + 10003;
+  ll a, b, k; cin >> a >> b >> k;
 
+  ll res = 1;
+  while(b) {
+    if(b & 1) res *= a, res %= k;
+    a *= a, a %= k;
+    b >>= 1;
+  }
+  
+  cout << res;
   return 0;
 }
 
