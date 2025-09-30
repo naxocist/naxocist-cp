@@ -7,15 +7,20 @@ using namespace std;
 #define all(x) begin(x), end(x)
 #define pb emplace_back
 
-const int N = 1e5 + 3;
-vector<pii> adj[N];
-
-
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
-  int n; cin >> n;
-  cout << n * n;
+  int n, k; cin >> n >> k;
+  map<string, set<int>> mp;
+  while(n --) {
+    string s; int x; cin >> s >> x;
+    mp[s].insert(x);
+  }
 
+  int res = 0;
+  for(auto &[a, b] : mp) {
+    if((int)b.size() == k) res ++;
+  }
+  cout << res;
   return 0;
 }
 

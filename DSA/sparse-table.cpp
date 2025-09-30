@@ -23,6 +23,8 @@ int uid(int a, int b) { return uniform_int_distribution<int>(a,b)(rng); }
 ll uld(ll a, ll b) { return uniform_int_distribution<ll>(a,b)(rng); }
 
 const int N = 1e5 + 3;
+const int LG = 20;
+int sp[LG][N];
 
 
 void solve() {

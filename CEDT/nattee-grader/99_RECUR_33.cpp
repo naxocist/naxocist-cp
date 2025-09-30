@@ -29,6 +29,7 @@ void dfs(int u) {
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
   cin >> n >> a >> b;
+
   while(n--) {
     int u, v; cin >> u >> v;
     adj[u].insert(v);
