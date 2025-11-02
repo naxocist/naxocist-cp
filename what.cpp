@@ -10,12 +10,13 @@ using namespace std;
 const int N = 1e5 + 3;
 vector<pii> adj[N];
 
-
 int32_t main() {
   cin.tie(nullptr)->sync_with_stdio(0);
   int n; cin >> n;
-  cout << n * n;
+  vector<int> v(n); for(auto &x : v) cin >> x;
+  sort(all(v));
 
+  for(auto x : v) cout << x << ' ';
   return 0;
 }
 
