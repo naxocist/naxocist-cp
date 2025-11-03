@@ -1,22 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ln '\n'
-#define ll long long
-#define pii pair<int, int>
-#define all(x) begin(x), end(x)
-#define pb emplace_back
+int main() {
+  cin.tie(nullptr)->sync_with_stdio(false);
+  int n, t; cin >> n >> t;
+  vector<int> v(n+1); for(int i=1; i<=n; ++i) cin >> v[i];
 
-const int N = 1e5 + 3;
-vector<pii> adj[N];
 
-int32_t main() {
-  cin.tie(nullptr)->sync_with_stdio(0);
-  int n; cin >> n;
-  vector<int> v(n); for(auto &x : v) cin >> x;
-  sort(all(v));
+  int d = 0, r = 1;
+  long long res = 0;
+  map<int, int> cnt;
+  for(int l=1; l<=n; ++l) {
 
-  for(auto x : v) cout << x << ' ';
+    for(;r<=n;++r) {
+      if(++cnt[v[r]] == 1) d ++;
+
+      if(d > t) {
+        if(--cnt[v[r]] == 0) d--;
+        break ;
+      }
+      res += r - l + 1;
+    }
+    if(--cnt[v[l]] == 0) d--;
+  }
+  cout << res; 
   return 0;
 }
 
