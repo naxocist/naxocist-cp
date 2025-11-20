@@ -8,7 +8,7 @@ int main() {
 
   set<pair<int, int>> s;
   s.emplace(-1, -1);
-  s.emplace(1e9 + 3, 1e9 + 3);
+  s.emplace(INT_MAX, INT_MAX);
 
   int res = 0;
   while(q --) {
