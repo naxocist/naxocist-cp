@@ -16,5 +16,6 @@ int32_t main() {
     }
     cout << '\n';
   }
+
   return 0;
 }
