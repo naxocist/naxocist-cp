@@ -12,7 +12,7 @@ void solve() {
   int n; cin >> n;
   for(int i=0; i<n; ++i) for(int j=0; j<n; ++j) cin >> dp[i][j];
 
-  for(int k=0; k<n; ++k) for(int i=0; i<n; ++i) for(int j=0; j<n; ++j) 
+  for(int k=0; k<n; ++k) for(int i=0; i<n; ++i) for(int j=0; j<n; ++j)
     dp[i][j] = max(dp[i][j], dp[i][k] * dp[k][j]);
 
   for(int i=0; i<n; ++i) {
